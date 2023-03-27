@@ -59,6 +59,7 @@ import Icon from "@mui/material/Icon";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
+import CompetitionList from 'pages/competitions/CompetitionList';
 
 const routes = [
   {
@@ -90,9 +91,19 @@ const routes = [
   { type: "divider", key: "divider-0" },
   {
     type: "collapse",
-    name: "Dashboards",
+    name: "Dashboard",
+    key: "dashboard",
+    route: "/dashboard",
+    icon: <Icon fontSize="medium">dashboard</Icon>,
+    noCollapse: true,
+    component: <Analytics />
+  },
+  /* {
+    type: "collapse",
+    name: "Dashboard",
     key: "dashboards",
     icon: <Icon fontSize="medium">dashboard</Icon>,
+    noCollapse: true,
     collapse: [
       {
         name: "Analytics",
@@ -107,14 +118,17 @@ const routes = [
         component: <Sales />,
       },
     ],
-  },
+  }, */
   { type: "title", title: "Pages", key: "title-pages" },
   {
     type: "collapse",
-    name: "Pages",
-    key: "pages",
-    icon: <Icon fontSize="medium">image</Icon>,
-    collapse: [
+    name: "My Competitions",
+    key: "competitions",
+    route: '/competitions',
+    icon: <Icon fontSize="medium">format_list_bulleted_icon</Icon>,
+    noCollapse: true,
+    component: <CompetitionList />
+    /* collapse: [
       {
         name: "Profile",
         key: "profile",
@@ -196,7 +210,7 @@ const routes = [
         route: "/pages/notifications",
         component: <Notifications />,
       },
-    ],
+    ], */
   },
   {
     type: "collapse",
