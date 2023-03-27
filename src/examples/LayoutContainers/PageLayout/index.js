@@ -15,7 +15,7 @@ import MDBox from "components/MDBox";
 import { useMaterialUIController, setLayout } from "context";
 
 function PageLayout({ background, children }) {
-  const [, dispatch] = useMaterialUIController();
+  const [controller, dispatch] = useMaterialUIController();
   const { pathname } = useLocation();
 
   useEffect(() => {
