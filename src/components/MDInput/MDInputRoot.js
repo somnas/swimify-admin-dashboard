@@ -35,7 +35,6 @@ export default styled(TextField)(({ theme, ownerState }) => {
     backgroundRepeat: "no-repeat",
     backgroundPosition: `right ${pxToRem(12)} center`,
     backgroundSize: `${pxToRem(16)} ${pxToRem(16)}`,
-
     "& .Mui-focused": {
       "& .MuiOutlinedInput-notchedOutline, &:after": {
         borderColor: colorSuccess.main,
@@ -58,6 +57,7 @@ export default styled(TextField)(({ theme, ownerState }) => {
         borderColor: dark.main,
       },
     },
+
     "& .MuiInputLabel-root.Mui-focused": {
       color: dark.main,
     },
