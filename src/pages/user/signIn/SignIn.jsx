@@ -82,7 +82,7 @@ export default function SignIn() {
               </MDTypography>
             </MDBox>
             <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="info" fullWidth>
+              <MDButton variant="gradient" color="dark" fullWidth>
                 sign in
               </MDButton>
             </MDBox>
@@ -93,7 +93,7 @@ export default function SignIn() {
                   component={Link}
                   to="/authentication/sign-up/cover"
                   variant="button"
-                  color="info"
+                  color="dark"
                   fontWeight="medium"
                   textGradient
                 >

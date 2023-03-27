@@ -32,10 +32,10 @@ const pageRoutes = [
             name: "analytics",
             route: "/dashboards/analytics",
           },
-          {
+          /* {
             name: "sales",
             route: "/dashboards/sales",
-          },
+          }, */
         ],
       },
       {
@@ -48,7 +48,7 @@ const pageRoutes = [
           },
         ],
       },
-      {
+      /* {
         name: "extra",
         icon: <Icon>queue_play_next</Icon>,
         collapse: [
@@ -64,7 +64,7 @@ const pageRoutes = [
             route: "/pages/notifications",
           },
         ],
-      },
+      }, */
       {
         name: "projects",
         icon: <Icon>precision_manufacturing</Icon>,
@@ -180,7 +180,7 @@ const pageRoutes = [
       },
     ],
   },
-  {
+  /* {
     name: "ecommerce",
     columns: 2,
     rowsPerColumn: 1,
@@ -218,8 +218,8 @@ const pageRoutes = [
         ],
       },
     ],
-  },
-  {
+  }, */
+  /* {
     name: "docs",
     collapse: [
       {
@@ -247,7 +247,7 @@ const pageRoutes = [
         icon: <Icon>extension</Icon>,
       },
     ],
-  },
+  }, */
 ];
 
 export default pageRoutes;
