@@ -28,11 +28,11 @@ import {
     navbarContainer,
     navbarRow,
     navbarIconButton,
-    navbarDesktopMenu,
+    //navbarDesktopMenu,
     navbarMobileMenu,
 } from "../styles";
 
-// Material Dashboard 2 PRO React context
+// context
 import {
     useMaterialUIController,
     setTransparentNavbar,

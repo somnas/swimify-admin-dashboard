@@ -8,8 +8,8 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 PRO React examples
-import DashboardLayout from "examples/LayoutContainers/DashboardLayout";
-import DashboardNavbar from "examples/Navbars/DashboardNavbar";
+import DashboardLayout from "layouts/containers/DashboardLayout";
+import DashboardNavbar from "components/navbars/dashboardNavbar/DashboardNavbar";
 import Footer from "layouts/components/Footer";
 import DataTable from "examples/Tables/DataTable";
 

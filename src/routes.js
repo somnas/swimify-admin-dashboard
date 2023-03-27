@@ -61,6 +61,7 @@ import Icon from "@mui/material/Icon";
 // Images
 import profilePicture from "assets/images/team-3.jpg";
 import CompetitionList from 'pages/competitions/CompetitionList';
+import Files from 'pages/files/Files';
 
 const routes = [
   {
@@ -215,6 +216,15 @@ const routes = [
   },
   {
     type: "collapse",
+    name: "My Files",
+    key: "files",
+    route: '/files',
+    icon: <Icon fontSize="medium">folder</Icon>,
+    noCollapse: true,
+    component: <Files />
+  },
+  /* {
+    type: "collapse",
     name: "Applications",
     key: "applications",
     icon: <Icon fontSize="medium">apps</Icon>,
@@ -338,8 +348,8 @@ const routes = [
         ],
       },
     ],
-  },
-  { type: "divider", key: "divider-1" },
+  }, */
+  /* { type: "divider", key: "divider-1" },
   { type: "title", title: "Docs", key: "title-docs" },
   {
     type: "collapse",
@@ -506,7 +516,7 @@ const routes = [
     href: "https://github.com/creativetimofficial/ct-material-dashboard-pro-react/blob/main/CHANGELOG.md",
     icon: <Icon fontSize="medium">receipt_long</Icon>,
     noCollapse: true,
-  },
+  }, */
 ];
 
 export default routes;
