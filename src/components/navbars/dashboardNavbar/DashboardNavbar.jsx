@@ -120,11 +120,6 @@ export default function DashboardNavbar({ absolute, light, isMini }) {
             <Toolbar sx={(theme) => navbarContainer(theme)}>
                 <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
                     <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
-                    <IconButton sx={navbarDesktopMenu} onClick={handleMiniSidenav} size="small" disableRipple>
-                        <Icon fontSize="medium" sx={iconsStyle}>
-                            {miniSidenav ? "menu_open" : "menu"}
-                        </Icon>
-                    </IconButton>
                 </MDBox>
                 {isMini ? null : (
                     <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
@@ -137,6 +132,7 @@ export default function DashboardNavbar({ absolute, light, isMini }) {
                                     <Icon sx={iconsStyle}>account_circle</Icon>
                                 </IconButton>
                             </Link>
+
                             <IconButton
                                 size="small"
                                 disableRipple
@@ -148,7 +144,7 @@ export default function DashboardNavbar({ absolute, light, isMini }) {
                                     {miniSidenav ? "menu_open" : "menu"}
                                 </Icon>
                             </IconButton>
-                         
+
                             <IconButton
                                 size="small"
                                 disableRipple
