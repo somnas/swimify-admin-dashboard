@@ -9,7 +9,7 @@ import Grid from "@mui/material/Grid";
 import MDBox from "components/MDBox";
 
 // Material Dashboard 2 PRO React examples
-import DefaultNavbar from "examples/Navbars/DefaultNavbar";
+import DefaultNavbar from "components/navbars/defaultNavbar/DefaultNavbar";
 import PageLayout from "./PageLayout";
 
 // Material Dashboard 2 PRO React page layout routes
@@ -63,4 +63,4 @@ export default function AuthenticationLayout({ image, children }) {
 AuthenticationLayout.propTypes = {
     image: PropTypes.string.isRequired,
     children: PropTypes.node.isRequired,
-  };
+};

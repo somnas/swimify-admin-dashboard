@@ -20,89 +20,90 @@ import MDInput from "components/MDInput";
 import MDButton from "components/MDButton";
 
 // Authentication layout components
-import BasicLayout from "layouts/authentication/components/BasicLayout";
+import AuthenticationLayout from 'layouts/containers/AuthenticationLayout';
 
 // Images
 import bgImage from "assets/images/swimmer_1280.jpg";
 
 export default function SignIn() {
-  const [rememberMe, setRememberMe] = useState(false);
 
-  const handleSetRememberMe = () => setRememberMe(!rememberMe);
+	const [rememberMe, setRememberMe] = useState(false);
 
-  return (
-    <BasicLayout image={bgImage}>
-      <Card>
-        <MDBox
-          variant="gradient"
-          bgColor="secondary"
-          borderRadius="lg"
-          coloredShadow="dark"
-          mx={2}
-          mt={-3}
-          p={2}
-          mb={1}
-          textAlign="center"
-        >
-          <MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
-            Sign in
-          </MDTypography>
-          <Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
-            <Grid item xs={3}>
-              <MDTypography component={MuiLink} href="#" variant="body1" color="white">
-                <AppleIcon color="inherit" />
-              </MDTypography>
-            </Grid>
-            <Grid item xs={3}>
-              <MDTypography component={MuiLink} href="#" variant="body1" color="white">
-                <GoogleIcon color="inherit" />
-              </MDTypography>
-            </Grid>
-          </Grid>
-        </MDBox>
-        <MDBox pt={4} pb={3} px={3}>
-          <MDBox component="form" role="form">
-            <MDBox mb={2}>
-              <MDInput type="email" label="Email" fullWidth />
-            </MDBox>
-            <MDBox mb={2}>
-              <MDInput type="password" label="Password" fullWidth />
-            </MDBox>
-            <MDBox display="flex" alignItems="center" ml={-1}>
-              <Switch checked={rememberMe} onChange={handleSetRememberMe} />
-              <MDTypography
-                variant="button"
-                fontWeight="regular"
-                color="text"
-                onClick={handleSetRememberMe}
-                sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
-              >
-                &nbsp;&nbsp;Remember me
-              </MDTypography>
-            </MDBox>
-            <MDBox mt={4} mb={1}>
-              <MDButton variant="gradient" color="dark" fullWidth>
-                sign in
-              </MDButton>
-            </MDBox>
-            <MDBox mt={3} mb={1} textAlign="center">
-              <MDTypography variant="button" color="text">
-                Don&apos;t have an account?{" "}
-                <MDTypography
-                  component={Link}
-                  to="/authentication/sign-up/cover"
-                  variant="button"
-                  color="dark"
-                  fontWeight="medium"
-                  textGradient
-                >
-                  Sign up
-                </MDTypography>
-              </MDTypography>
-            </MDBox>
-          </MDBox>
-        </MDBox>
-      </Card>
-    </BasicLayout>
-  );
+	const handleSetRememberMe = () => setRememberMe(!rememberMe);
+
+	return (
+		<AuthenticationLayout image={bgImage}>
+			<Card>
+				<MDBox
+					variant="gradient"
+					bgColor="secondary"
+					borderRadius="lg"
+					coloredShadow="dark"
+					mx={2}
+					mt={-3}
+					p={2}
+					mb={1}
+					textAlign="center"
+				>
+					<MDTypography variant="h4" fontWeight="medium" color="white" mt={1}>
+						Sign in
+					</MDTypography>
+					<Grid container spacing={3} justifyContent="center" sx={{ mt: 1, mb: 2 }}>
+						<Grid item xs={3}>
+							<MDTypography component={MuiLink} href="#" variant="body1" color="white">
+								<AppleIcon color="inherit" />
+							</MDTypography>
+						</Grid>
+						<Grid item xs={3}>
+							<MDTypography component={MuiLink} href="#" variant="body1" color="white">
+								<GoogleIcon color="inherit" />
+							</MDTypography>
+						</Grid>
+					</Grid>
+				</MDBox>
+				<MDBox pt={4} pb={3} px={3}>
+					<MDBox component="form" role="form">
+						<MDBox mb={2}>
+							<MDInput type="email" label="Email" fullWidth />
+						</MDBox>
+						<MDBox mb={2}>
+							<MDInput type="password" label="Password" fullWidth />
+						</MDBox>
+						<MDBox display="flex" alignItems="center" ml={-1}>
+							<Switch checked={rememberMe} onChange={handleSetRememberMe} />
+							<MDTypography
+								variant="button"
+								fontWeight="regular"
+								color="text"
+								onClick={handleSetRememberMe}
+								sx={{ cursor: "pointer", userSelect: "none", ml: -1 }}
+							>
+								&nbsp;&nbsp;Remember me
+							</MDTypography>
+						</MDBox>
+						<MDBox mt={4} mb={1}>
+							<MDButton variant="gradient" color="dark" fullWidth>
+								sign in
+							</MDButton>
+						</MDBox>
+						<MDBox mt={3} mb={1} textAlign="center">
+							<MDTypography variant="button" color="text">
+								Don&apos;t have an account?{" "}
+								<MDTypography
+									component={Link}
+									to="/authentication/sign-up/cover"
+									variant="button"
+									color="dark"
+									fontWeight="medium"
+									textGradient
+								>
+									Sign up
+								</MDTypography>
+							</MDTypography>
+						</MDBox>
+					</MDBox>
+				</MDBox>
+			</Card>
+		</AuthenticationLayout>
+	);
 }
