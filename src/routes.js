@@ -50,7 +50,7 @@ import OrderDetails from "layouts/ecommerce/orders/order-details";
 
 import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
-import SignIn from 'pages/user/signIn/SignIn';
+import SignIn from 'pages/authentication/signIn/SignIn';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
