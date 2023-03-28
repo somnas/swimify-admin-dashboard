@@ -21,8 +21,8 @@ import MDInput from "components/MDInput";
 import MDPagination from "components/MDPagination";
 
 // Material Dashboard 2 PRO React examples
-import DataTableHeadCell from "examples/Tables/DataTable/DataTableHeadCell";
-import DataTableBodyCell from "examples/Tables/DataTable/DataTableBodyCell";
+import DataTableHeadCell from "./DataTableHeadCell";
+import DataTableBodyCell from "./DataTableBodyCell";
 
 export default function DataTable({ entriesPerPage, canSearch, showTotalEntries, table, pagination, isSorted, noEndBorder }) {
 
