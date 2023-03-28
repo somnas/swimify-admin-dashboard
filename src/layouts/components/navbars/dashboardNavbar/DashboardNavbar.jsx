@@ -19,7 +19,7 @@ import MDInput from "components/MDInput";
 import MDBadge from "components/MDBadge";
 
 // Material Dashboard 2 PRO React examples
-import Breadcrumbs from "examples/Breadcrumbs";
+import Breadcrumbs from "layouts/components/Breadcrumbs";
 import NotificationItem from "examples/Items/NotificationItem";
 
 // Custom styles for DashboardNavbar

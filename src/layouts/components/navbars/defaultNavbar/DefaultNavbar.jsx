@@ -22,8 +22,8 @@ import MDTypography from "components/MDTypography";
 import MDButton from "components/MDButton";
 
 // Material Dashboard 2 PRO React TS examples components
-import DefaultNavbarDropdown from "components/navbars/defaultNavbar/DefaultNavbarDropdown";
-import DefaultNavbarMobile from "components/navbars/defaultNavbar/DefaultNavbarMobile";
+import DefaultNavbarDropdown from "./DefaultNavbarDropdown";
+import DefaultNavbarMobile from "./DefaultNavbarMobile";
 
 // Material Dashboard 2 PRO React TS Base Styles
 import breakpoints from "assets/theme/base/breakpoints";

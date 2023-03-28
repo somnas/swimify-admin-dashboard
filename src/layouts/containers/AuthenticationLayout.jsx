@@ -9,7 +9,7 @@ import Grid from "@mui/material/Grid";
 import MDBox from "components/MDBox";
 
 // Material Dashboard 2 PRO React examples
-import DefaultNavbar from "components/navbars/defaultNavbar/DefaultNavbar";
+import DefaultNavbar from "layouts/components/navbars/defaultNavbar/DefaultNavbar";
 import PageLayout from "./PageLayout";
 
 // Material Dashboard 2 PRO React page layout routes

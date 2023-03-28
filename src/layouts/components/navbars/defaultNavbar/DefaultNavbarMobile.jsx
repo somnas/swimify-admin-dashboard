@@ -16,7 +16,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 PRO React TS exampless
-import DefaultNavbarDropdown from "components/navbars/defaultNavbar/DefaultNavbarDropdown";
+import DefaultNavbarDropdown from "./DefaultNavbarDropdown";
 
 export default function DefaultNavbarMobile({ routes, open }) {
   const [collapse, setCollapse] = useState("");

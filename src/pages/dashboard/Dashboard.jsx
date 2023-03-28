@@ -1,34 +1,34 @@
 import React from 'react';
 
 // @mui material components
-import Grid from "@mui/material/Grid";
-import Tooltip from "@mui/material/Tooltip";
-import Icon from "@mui/material/Icon";
+import Grid from '@mui/material/Grid';
+import Tooltip from '@mui/material/Tooltip';
+import Icon from '@mui/material/Icon';
 
 // Material Dashboard 2 PRO React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
+import MDBox from 'components/MDBox';
+import MDTypography from 'components/MDTypography';
 
 // Material Dashboard 2 PRO React examples
-import DashboardLayout from "layouts/containers/DashboardLayout";
-import DashboardNavbar from "components/navbars/dashboardNavbar/DashboardNavbar";
-import Footer from "layouts/components/Footer";
-import ReportsBarChart from "examples/Charts/BarCharts/ReportsBarChart";
-import ReportsLineChart from "examples/Charts/LineCharts/ReportsLineChart";
-import ComplexStatisticsCard from "examples/Cards/StatisticsCards/ComplexStatisticsCard";
-import BookingCard from "examples/Cards/BookingCard";
+import DashboardLayout from 'layouts/containers/DashboardLayout';
+import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
+import Footer from 'layouts/components/Footer';
+import ReportsBarChart from 'examples/Charts/BarCharts/ReportsBarChart';
+import ReportsLineChart from 'examples/Charts/LineCharts/ReportsLineChart';
+import ComplexStatisticsCard from 'examples/Cards/StatisticsCards/ComplexStatisticsCard';
+import BookingCard from 'examples/Cards/BookingCard';
 
 // Anaytics dashboard components
-import SalesByCountry from "layouts/dashboards/analytics/components/SalesByCountry";
+import SalesByCountry from 'layouts/dashboards/analytics/components/SalesByCountry';
 
 // Data
-import reportsBarChartData from "layouts/dashboards/analytics/data/reportsBarChartData";
-import reportsLineChartData from "layouts/dashboards/analytics/data/reportsLineChartData";
+import reportsBarChartData from 'layouts/dashboards/analytics/data/reportsBarChartData';
+import reportsLineChartData from 'layouts/dashboards/analytics/data/reportsLineChartData';
 
 // Images
-import booking1 from "assets/images/products/product-1-min.jpg";
-import booking2 from "assets/images/products/product-2-min.jpg";
-import booking3 from "assets/images/products/product-3-min.jpg";
+import booking1 from 'assets/images/products/product-1-min.jpg';
+import booking2 from 'assets/images/products/product-2-min.jpg';
+import booking3 from 'assets/images/products/product-3-min.jpg';
 
 export default function Dashboard() {
 
@@ -37,19 +37,19 @@ export default function Dashboard() {
     // Action buttons for the BookingCard
     const actionButtons = (
         <>
-            <Tooltip title="Refresh" placement="bottom">
+            <Tooltip title='Refresh' placement='bottom'>
                 <MDTypography
-                    variant="body1"
-                    color="primary"
+                    variant='body1'
+                    color='primary'
                     lineHeight={1}
-                    sx={{ cursor: "pointer", mx: 3 }}
+                    sx={{ cursor: 'pointer', mx: 3 }}
                 >
-                    <Icon color="inherit">refresh</Icon>
+                    <Icon color='inherit'>refresh</Icon>
                 </MDTypography>
             </Tooltip>
-            <Tooltip title="Edit" placement="bottom">
-                <MDTypography variant="body1" color="info" lineHeight={1} sx={{ cursor: "pointer", mx: 3 }}>
-                    <Icon color="inherit">edit</Icon>
+            <Tooltip title='Edit' placement='bottom'>
+                <MDTypography variant='body1' color='info' lineHeight={1} sx={{ cursor: 'pointer', mx: 3 }}>
+                    <Icon color='inherit'>edit</Icon>
                 </MDTypography>
             </Tooltip>
         </>
@@ -67,10 +67,10 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={4}>
                             <MDBox mb={3}>
                                 <ReportsBarChart
-                                    color="info"
-                                    title="website views"
-                                    description="Last Campaign Performance"
-                                    date="campaign sent 2 days ago"
+                                    color='info'
+                                    title='website views'
+                                    description='Last Campaign Performance'
+                                    date='campaign sent 2 days ago'
                                     chart={reportsBarChartData}
                                 />
                             </MDBox>
@@ -78,14 +78,14 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={4}>
                             <MDBox mb={3}>
                                 <ReportsLineChart
-                                    color="success"
-                                    title="daily sales"
+                                    color='success'
+                                    title='daily sales'
                                     description={
                                         <>
                                             (<strong>+15%</strong>) increase in today sales.
                                         </>
                                     }
-                                    date="updated 4 min ago"
+                                    date='updated 4 min ago'
                                     chart={sales}
                                 />
                             </MDBox>
@@ -93,10 +93,10 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={4}>
                             <MDBox mb={3}>
                                 <ReportsLineChart
-                                    color="dark"
-                                    title="completed tasks"
-                                    description="Last Campaign Performance"
-                                    date="just updated"
+                                    color='dark'
+                                    title='completed tasks'
+                                    description='Last Campaign Performance'
+                                    date='just updated'
                                     chart={tasks}
                                 />
                             </MDBox>
@@ -108,14 +108,14 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={3}>
                             <MDBox mb={1.5}>
                                 <ComplexStatisticsCard
-                                    color="dark"
-                                    icon="weekend"
-                                    title="Bookings"
+                                    color='dark'
+                                    icon='weekend'
+                                    title='Bookings'
                                     count={281}
                                     percentage={{
-                                        color: "success",
-                                        amount: "+55%",
-                                        label: "than lask week",
+                                        color: 'success',
+                                        amount: '+55%',
+                                        label: 'than lask week',
                                     }}
                                 />
                             </MDBox>
@@ -123,13 +123,13 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={3}>
                             <MDBox mb={1.5}>
                                 <ComplexStatisticsCard
-                                    icon="leaderboard"
+                                    icon='leaderboard'
                                     title="Today's Users"
-                                    count="2,300"
+                                    count='2,300'
                                     percentage={{
-                                        color: "success",
-                                        amount: "+3%",
-                                        label: "than last month",
+                                        color: 'success',
+                                        amount: '+3%',
+                                        label: 'than last month',
                                     }}
                                 />
                             </MDBox>
@@ -137,14 +137,14 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={3}>
                             <MDBox mb={1.5}>
                                 <ComplexStatisticsCard
-                                    color="success"
-                                    icon="store"
-                                    title="Revenue"
-                                    count="34k"
+                                    color='success'
+                                    icon='store'
+                                    title='Revenue'
+                                    count='34k'
                                     percentage={{
-                                        color: "success",
-                                        amount: "+1%",
-                                        label: "than yesterday",
+                                        color: 'success',
+                                        amount: '+1%',
+                                        label: 'than yesterday',
                                     }}
                                 />
                             </MDBox>
@@ -152,14 +152,14 @@ export default function Dashboard() {
                         <Grid item xs={12} md={6} lg={3}>
                             <MDBox mb={1.5}>
                                 <ComplexStatisticsCard
-                                    color="primary"
-                                    icon="person_add"
-                                    title="Followers"
-                                    count="+91"
+                                    color='primary'
+                                    icon='person_add'
+                                    title='Followers'
+                                    count='+91'
                                     percentage={{
-                                        color: "success",
-                                        amount: "",
-                                        label: "Just updated",
+                                        color: 'success',
+                                        amount: '',
+                                        label: 'Just updated',
                                     }}
                                 />
                             </MDBox>
@@ -172,10 +172,10 @@ export default function Dashboard() {
                             <MDBox mt={3}>
                                 <BookingCard
                                     image={booking1}
-                                    title="Cozy 5 Stars Apartment"
-                                    description='The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Barcelona.'
-                                    price="$899/night"
-                                    location="Barcelona, Spain"
+                                    title='Cozy 5 Stars Apartment'
+                                    description="The place is close to Barceloneta Beach and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Barcelona."
+                                    price='$899/night'
+                                    location='Barcelona, Spain'
                                     action={actionButtons}
                                 />
                             </MDBox>
@@ -184,10 +184,10 @@ export default function Dashboard() {
                             <MDBox mt={3}>
                                 <BookingCard
                                     image={booking2}
-                                    title="Office Studio"
-                                    description='The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the night life in London, UK.'
-                                    price="$1.119/night"
-                                    location="London, UK"
+                                    title='Office Studio'
+                                    description="The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the night life in London, UK."
+                                    price='$1.119/night'
+                                    location='London, UK'
                                     action={actionButtons}
                                 />
                             </MDBox>
@@ -196,10 +196,10 @@ export default function Dashboard() {
                             <MDBox mt={3}>
                                 <BookingCard
                                     image={booking3}
-                                    title="Beautiful Castle"
-                                    description='The place is close to Metro Station and bus stop just 2 min by walk and near to "Naviglio" where you can enjoy the main night life in Milan.'
-                                    price="$459/night"
-                                    location="Milan, Italy"
+                                    title='Beautiful Castle'
+                                    description="The place is close to Metro Station and bus stop just 2 min by walk and near to 'Naviglio' where you can enjoy the main night life in Milan."
+                                    price='$459/night'
+                                    location='Milan, Italy'
                                     action={actionButtons}
                                 />
                             </MDBox>
