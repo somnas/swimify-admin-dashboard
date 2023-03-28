@@ -26,7 +26,8 @@ import Dashboard from 'pages/dashboard/Dashboard';
 
 import Analytics from "layouts/dashboards/analytics";
 import Sales from "layouts/dashboards/sales";
-import ProfileOverview from "layouts/pages/profile/profile-overview";
+import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
+//import ProfileOverview from "layouts/pages/profile/profile-overview";
 import AllProjects from "layouts/pages/profile/all-projects";
 import NewUser from "layouts/pages/users/new-user";
 import Settings from "layouts/pages/account/settings";

@@ -34,7 +34,7 @@ export default function Footer({ light }) {
                 color={light ? "white" : "text"}
                 fontSize={size.sm}
             >
-                &copy; {new Date().getFullYear()}, made by
+                &copy; {new Date().getFullYear()}
                 <Link href="https://www.swimify.com/" target="_blank">
                     <MDTypography variant="button" fontWeight="medium" color={light ? "white" : "dark"}>
                         &nbsp;Swimify,&nbsp;
