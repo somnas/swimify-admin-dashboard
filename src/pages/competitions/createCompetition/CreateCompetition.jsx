@@ -59,11 +59,11 @@ export default function CreateCompetition() {
                         <MDBox mt={6} mb={8} textAlign='center'>
                             <MDBox mb={1}>
                                 <MDTypography variant='h3' fontWeight='bold'>
-                                    Add New Product
+                                    Create a competition
                                 </MDTypography>
                             </MDBox>
                             <MDTypography variant='h5' fontWeight='regular' color='secondary'>
-                                This information will describe more about the product.
+                                Follow the steps below to create a new competition.
                             </MDTypography>
                         </MDBox>
                         <Card>
