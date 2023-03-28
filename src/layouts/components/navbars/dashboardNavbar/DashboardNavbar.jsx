@@ -40,7 +40,7 @@ import {
     setOpenConfigurator,
 } from "context";
 
-export default function DashboardNavbar({ absolute, light, isMini }) {
+export default function DashboardNavbar({ absolute, light, isMini, title }) {
 
     const [navbarType, setNavbarType] = useState();
     const [controller, dispatch] = useMaterialUIController();
@@ -119,7 +119,7 @@ export default function DashboardNavbar({ absolute, light, isMini }) {
         >
             <Toolbar sx={(theme) => navbarContainer(theme)}>
                 <MDBox color="inherit" mb={{ xs: 1, md: 0 }} sx={(theme) => navbarRow(theme, { isMini })}>
-                    <Breadcrumbs icon="home" title={route[route.length - 1]} route={route} light={light} />
+                    <Breadcrumbs icon="home" title={title ? title : route[route.length - 1]} route={route} light={light} />
                 </MDBox>
                 {isMini ? null : (
                     <MDBox sx={(theme) => navbarRow(theme, { isMini })}>
@@ -173,6 +173,7 @@ DashboardNavbar.defaultProps = {
     absolute: false,
     light: false,
     isMini: false,
+    title: ''
 };
 
 // Typechecking props for the DashboardNavbar
@@ -180,4 +181,5 @@ DashboardNavbar.propTypes = {
     absolute: PropTypes.bool,
     light: PropTypes.bool,
     isMini: PropTypes.bool,
+    title: PropTypes.string
 };

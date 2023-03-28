@@ -40,7 +40,6 @@ export default function Breadcrumbs({ icon, title, route, light }) {
                 </Link>
                 {routes.map((el) => (
                     <Link to={`/${el}`} key={el}>
-                        {console.log(title)}
                         <MDTypography
                             component="span"
                             variant="button"

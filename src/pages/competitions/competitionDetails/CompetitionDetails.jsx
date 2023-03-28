@@ -4,9 +4,12 @@ import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/Dashboar
 import DashboardLayout from 'layouts/containers/DashboardLayout';
 
 export default function CompetitionDetails() {
+
+    const competitionName = 'SM Linköping 2022';
+
     return (
         <DashboardLayout>
-            <DashboardNavbar />
+            <DashboardNavbar title={competitionName} />
             <div>CompetitionDetails</div>
         </DashboardLayout>
     );
