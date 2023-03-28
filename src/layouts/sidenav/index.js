@@ -17,13 +17,13 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 PRO React examples
-import SidenavCollapse from "examples/Sidenav/SidenavCollapse";
-import SidenavList from "examples/Sidenav/SidenavList";
-import SidenavItem from "examples/Sidenav/SidenavItem";
+import SidenavCollapse from "./SidenavCollapse";
+import SidenavList from "./SidenavList";
+import SidenavItem from "./SidenavItem";
 
 // Custom styles for the Sidenav
-import SidenavRoot from "examples/Sidenav/SidenavRoot";
-import sidenavLogoLabel from "examples/Sidenav/styles/sidenav";
+import SidenavRoot from "./SidenavRoot";
+import sidenavLogoLabel from "./styles/sidenav";
 
 // Material Dashboard 2 PRO React context
 import {
@@ -34,6 +34,7 @@ import {
 } from "context";
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
+
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
   const [controller, dispatch] = useMaterialUIController();

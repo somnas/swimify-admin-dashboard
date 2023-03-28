@@ -1,6 +1,5 @@
 /* eslint-disable prefer-destructuring */
 
-
 function item(theme, ownerState) {
   const { palette, borders, functions, transitions } = theme;
   const { active, color, transparentSidenav, whiteSidenav, darkMode } = ownerState;
@@ -79,7 +78,7 @@ function itemContent(theme, ownerState) {
       }),
     },
 
-    "&::before": {
+    /* "&::before": {
       content: `"${name[0]}"`,
       color:
         ((transparentSidenav && !darkMode) || whiteSidenav) && (active === "isParent" || !active)
@@ -95,7 +94,7 @@ function itemContent(theme, ownerState) {
       opacity: 1,
       borderRadius: "50%",
       fontSize: size.sm,
-    },
+    }, */
   };
 }
 

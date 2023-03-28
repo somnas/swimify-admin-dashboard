@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -13,12 +13,13 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 
 // Custom styles for the SidenavItem
-import { item, itemContent, itemArrow } from "examples/Sidenav/styles/sidenavItem";
+import { item, itemContent, itemArrow } from "./styles/sidenavItem";
 
 // Material Dashboard 2 PRO React contexts
 import { useMaterialUIController } from "context";
 
 function SidenavItem({ color, name, active, nested, children, open, ...rest }) {
+
   const [controller] = useMaterialUIController();
   const { miniSidenav, transparentSidenav, whiteSidenav, darkMode } = controller;
 

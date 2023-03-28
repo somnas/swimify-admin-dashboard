@@ -12,7 +12,7 @@ import Icon from "@mui/material/Icon";
 import MDBox from "components/MDBox";
 
 // Material Dashboard 2 PRO React examples
-import Sidenav from "examples/Sidenav";
+import Sidenav from "layouts/sidenav";
 //import Sidenav from "layouts/dashboard/Sidenav";
 import Configurator from "examples/Configurator";
 

@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 // prop-types is a library for typechecking of props.
 import PropTypes from "prop-types";
@@ -7,13 +7,9 @@ import PropTypes from "prop-types";
 import List from "@mui/material/List";
 
 function SidenavList({ children }) {
+
   return (
-    <List
-      sx={{
-        px: 2,
-        my: 0.3,
-      }}
-    >
+    <List sx={{ px: 2, my: 0.3, }}>
       {children}
     </List>
   );
