@@ -22,11 +22,9 @@
 
 // Material Dashboard 2 PRO React layouts
 
-import Dashboard from 'pages/dashboard/Dashboard';
 
 import Analytics from "layouts/dashboards/analytics";
 import Sales from "layouts/dashboards/sales";
-import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
 //import ProfileOverview from "layouts/pages/profile/profile-overview";
 import AllProjects from "layouts/pages/profile/all-projects";
 import NewUser from "layouts/pages/users/new-user";
@@ -51,7 +49,11 @@ import OrderDetails from "layouts/ecommerce/orders/order-details";
 
 import SignUpCover from "layouts/authentication/sign-up/cover";
 import ResetCover from "layouts/authentication/reset-password/cover";
+
+import Dashboard from 'pages/dashboard/Dashboard';
 import SignIn from 'pages/authentication/signIn/SignIn';
+import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
+import CompetitionList from 'pages/competitions/competitionList/CompetitionList';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -61,7 +63,6 @@ import Icon from "@mui/material/Icon";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
-import CompetitionList from 'pages/competitions/CompetitionList';
 import Files from 'pages/files/Files';
 
 const routes = [
@@ -125,12 +126,37 @@ const routes = [
   { type: "title", title: "Pages", key: "title-pages" },
   {
     type: "collapse",
-    name: "My Competitions",
+    name: "Competitions",
     key: "competitions",
     route: '/competitions',
     icon: <Icon fontSize="medium">format_list_bulleted_icon</Icon>,
-    noCollapse: true,
-    component: <CompetitionList />
+    //component: <CompetitionList />
+    collapse: [
+      {
+        name: "My Competitions",
+        key: "my-competitions",
+        route: "/competitions",
+        component: <CompetitionList />,
+      },
+      {
+        name: "Competition Details",
+        key: "competition-details",
+        route: "/competitions/:competitionId",
+        component: <Settings />,
+      },
+      {
+        name: "Create Competition",
+        key: "create-competition",
+        route: "/competitions/new",
+        component: <Settings />,
+      },
+      {
+        name: "Edit Competition",
+        key: "edit-competition",
+        route: "/competitions/:competitionId/edit",
+        component: <SignIn />,
+      },
+    ],
     /* collapse: [
       {
         name: "Profile",
