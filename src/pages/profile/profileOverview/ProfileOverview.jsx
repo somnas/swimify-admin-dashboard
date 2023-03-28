@@ -80,14 +80,14 @@ export default function ProfileOverview() {
                 action={{ route: "", tooltip: "Edit Profile" }}
                 shadow={false}
               />
-              <Divider orientation="vertical" sx={{ mx: 0 }} />
+              <Divider orientation="vertical" />
             </Grid>
             <Grid item xs={12} xl={4}>
               <ProfilesList title="conversations" profiles={profilesListData} shadow={false} />
             </Grid>
           </Grid>
         </MDBox>
-        <MDBox pt={2} px={2} lineHeight={1.25}>
+        {/* <MDBox pt={2} px={2} lineHeight={1.25}>
           <MDTypography variant="h6" fontWeight="medium">
             Projects
           </MDTypography>
@@ -96,8 +96,8 @@ export default function ProfileOverview() {
               Architects design houses
             </MDTypography>
           </MDBox>
-        </MDBox>
-        <MDBox p={2}>
+        </MDBox> */}
+        {/* <MDBox p={2}>
           <Grid container spacing={6}>
             <Grid item xs={12} md={6} xl={3}>
               <DefaultProjectCard
@@ -180,7 +180,7 @@ export default function ProfileOverview() {
               />
             </Grid>
           </Grid>
-        </MDBox>
+        </MDBox> */}
       </Header>
       <Footer />
     </DashboardLayout>

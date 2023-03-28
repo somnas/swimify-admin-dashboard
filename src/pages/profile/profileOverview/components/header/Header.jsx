@@ -67,7 +67,7 @@ export default function Header({ children }) {
                             </MDTypography>
                         </MDBox>
                     </Grid>
-                    <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto", mr: 1 }}>
+                    {/* <Grid item xs={12} md={6} lg={4} sx={{ ml: "auto", mr: 1 }}>
                         <AppBar position="static">
                             <Tabs orientation={tabsOrientation} value={tabValue} onChange={handleSetTabValue}>
                                 <Tab
@@ -96,7 +96,7 @@ export default function Header({ children }) {
                                 />
                             </Tabs>
                         </AppBar>
-                    </Grid>
+                    </Grid> */}
                 </Grid>
                 {children}
             </Card>
