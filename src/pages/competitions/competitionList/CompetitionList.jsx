@@ -11,7 +11,7 @@ import MDTypography from 'components/MDTypography';
 import DashboardLayout from 'layouts/containers/DashboardLayout';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
 import Footer from 'layouts/components/Footer';
-import DataTable from 'examples/Tables/DataTable';
+import DataTable from 'layouts/components/dataTable/DataTable';
 
 // Data
 import dataTableData from './data/dataTableData';
