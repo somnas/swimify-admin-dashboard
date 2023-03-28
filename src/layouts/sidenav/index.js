@@ -35,8 +35,6 @@ import {
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
-  console.log(color);
-
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
   const [controller, dispatch] = useMaterialUIController();

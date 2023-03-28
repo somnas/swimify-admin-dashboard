@@ -136,8 +136,6 @@ export default function App() {
     </MDBox>
   );
 
-  //console.log(routes);
-
   return (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
       <CssBaseline />
