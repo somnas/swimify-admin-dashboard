@@ -4,7 +4,7 @@
 import colors from "assets/theme/base/colors";
 import typography from "assets/theme/base/typography";
 
-const { text, info } = colors;
+const { text, info, dark } = colors;
 const { size } = typography;
 
 const inputLabel = {
@@ -15,7 +15,7 @@ const inputLabel = {
       lineHeight: 0.9,
 
       "&.Mui-focused": {
-        color: info.main,
+        color: dark.main,
       },
 
       "&.MuiInputLabel-shrink": {

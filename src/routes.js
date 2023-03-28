@@ -243,7 +243,7 @@ const routes = [
   },
   {
     type: "collapse",
-    name: "My Files",
+    name: "Files",
     key: "files",
     route: '/files',
     icon: <Icon fontSize="medium">folder</Icon>,
