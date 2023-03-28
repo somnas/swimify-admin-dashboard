@@ -76,15 +76,15 @@ const routes = [
     icon: <MDAvatar src={profilePicture} alt="Brooklyn Alice" size="sm" />,
     collapse: [
       {
-        name: "My Profile",
-        key: "my-profile",
-        route: "/pages/profile/profile-overview",
+        name: "Profile",
+        key: "profile",
+        route: "/pages/profile/profile",
         component: <ProfileOverview />,
       },
       {
         name: "Settings",
         key: "profile-settings",
-        route: "/pages/account/settings",
+        route: "/pages/account/profile-settings",
         component: <Settings />,
       },
       {
@@ -131,13 +131,11 @@ const routes = [
     type: "collapse",
     name: "Competitions",
     key: "competitions",
-    route: '/competitions',
     icon: <Icon fontSize="medium">format_list_bulleted_icon</Icon>,
-    //component: <CompetitionList />
     collapse: [
       {
-        name: "My Competitions",
-        key: "my-competitions",
+        name: "Competitions",
+        key: "competitions",
         route: "/competitions",
         component: <CompetitionList />,
       },
@@ -150,7 +148,7 @@ const routes = [
       {
         name: "Create Competition",
         key: "create-competition",
-        route: "/competitions/new",
+        route: "/competitions/create-competition",
         component: <CreateCompetition />,
       },
       /* {

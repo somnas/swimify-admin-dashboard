@@ -35,6 +35,8 @@ import {
 
 function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
+  console.log(color);
+
   const [openCollapse, setOpenCollapse] = useState(false);
   const [openNestedCollapse, setOpenNestedCollapse] = useState(false);
   const [controller, dispatch] = useMaterialUIController();
@@ -103,9 +105,10 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
 
     return template;
   };
-  // Render the all the collpases from the routes.js
-  const renderCollapse = (collapses) =>
-    collapses.map(({ name, collapse, route, href, key }) => {
+  // Render the all the collapses from the routes.js
+  const renderCollapse = (collapses) => {
+    return collapses.map(({ name, collapse, route, href, key }) => {
+
       let returnValue;
 
       if (collapse) {
@@ -144,6 +147,7 @@ function Sidenav({ color, brand, brandName, routes, ...rest }) {
       }
       return <SidenavList key={key}>{returnValue}</SidenavList>;
     });
+  };
 
   // Render all the routes from the routes.js (All the visible items on the Sidenav)
   const renderRoutes = routes.map(

@@ -18,6 +18,10 @@ const colors = {
     main: "#000000",
     focus: "#000000",
   },
+  neutral: {
+    main: '#98A2B3',
+    contrastText: '#000',
+  },
   primary: {
     main: "#e91e63",
     focus: "#e91e63",

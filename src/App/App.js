@@ -13,7 +13,7 @@ import MDBox from "components/MDBox";
 
 // Material Dashboard 2 PRO React examples
 import Sidenav from "layouts/sidenav";
-//import Sidenav from "layouts/dashboard/Sidenav";
+//import Sidenav from "examples/Sidenav";
 import Configurator from "examples/Configurator";
 
 // Material Dashboard 2 PRO React themes
@@ -135,6 +135,8 @@ export default function App() {
       </Icon>
     </MDBox>
   );
+
+  //console.log(routes);
 
   return (
     <ThemeProvider theme={darkMode ? themeDark : theme}>
