@@ -55,9 +55,8 @@ import SignIn from 'pages/authentication/signIn/SignIn';
 import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
 import CompetitionList from 'pages/competitions/competitionList/CompetitionList';
 import Files from 'pages/files/Files';
-import CompetitionDetails from 'pages/competitions/competitionDetails/CompetitionDetails';
 import CreateCompetition from 'pages/competitions/createCompetition/CreateCompetition';
-import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
+import ProfileSettings from 'pages/profile/profileSettings/ProfileSettings';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -76,16 +75,16 @@ const routes = [
     icon: <MDAvatar src={profilePicture} alt="Brooklyn Alice" size="sm" />,
     collapse: [
       {
-        name: "Profile",
-        key: "profile",
-        route: "/pages/profile/profile",
+        name: "Account",
+        key: "account",
+        route: "/account",
         component: <ProfileOverview />,
       },
       {
         name: "Settings",
-        key: "profile-settings",
-        route: "/pages/account/profile-settings",
-        component: <Settings />,
+        key: "account-settings",
+        route: "/account/account-settings",
+        component: <ProfileSettings />,
       },
       {
         name: "Logout",
