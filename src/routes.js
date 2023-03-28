@@ -54,6 +54,10 @@ import Dashboard from 'pages/dashboard/Dashboard';
 import SignIn from 'pages/authentication/signIn/SignIn';
 import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
 import CompetitionList from 'pages/competitions/competitionList/CompetitionList';
+import Files from 'pages/files/Files';
+import CompetitionDetails from 'pages/competitions/competitionDetails/CompetitionDetails';
+import CreateCompetition from 'pages/competitions/createCompetition/CreateCompetition';
+import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -63,7 +67,6 @@ import Icon from "@mui/material/Icon";
 
 // Images
 import profilePicture from "assets/images/team-3.jpg";
-import Files from 'pages/files/Files';
 
 const routes = [
   {
@@ -138,24 +141,24 @@ const routes = [
         route: "/competitions",
         component: <CompetitionList />,
       },
-      {
+      /* {
         name: "Competition Details",
         key: "competition-details",
         route: "/competitions/:competitionId",
-        component: <Settings />,
-      },
+        component: <CompetitionDetails />,
+      }, */
       {
         name: "Create Competition",
         key: "create-competition",
         route: "/competitions/new",
-        component: <Settings />,
+        component: <CreateCompetition />,
       },
-      {
+      /* {
         name: "Edit Competition",
         key: "edit-competition",
         route: "/competitions/:competitionId/edit",
-        component: <SignIn />,
-      },
+        component: <EditCompetition />,
+      }, */
     ],
     /* collapse: [
       {

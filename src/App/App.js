@@ -39,6 +39,10 @@ import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "co
 import brandWhite from "assets/images/logo-swimify.png";
 import brandDark from "assets/images/logo-swimify.png";
 
+// Pages
+import CompetitionDetails from 'pages/competitions/competitionDetails/CompetitionDetails';
+import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
+
 export default function App() {
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -152,6 +156,8 @@ export default function App() {
       {/* {layout === "vr" && <Configurator />} */}
       <Routes>
         {getRoutes(routes)}
+        <Route path="/competition/:competitionId" element={<CompetitionDetails />} />
+        <Route path="/competition/:competitionId/edit" element={<EditCompetition />} />
         <Route path="*" element={<Navigate to="/dashboard" />} />
       </Routes>
     </ThemeProvider>
