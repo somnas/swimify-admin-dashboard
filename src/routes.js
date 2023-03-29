@@ -58,6 +58,7 @@ import CompetitionList2 from 'pages/competitions/competitionList/CompetitionList
 import Files from 'pages/files/Files';
 import CreateCompetition from 'pages/competitions/createCompetition/CreateCompetition';
 import ProfileSettings from 'pages/profile/profileSettings/ProfileSettings';
+import CreateCompNew from 'pages/competitions/createCompetition/CreateCompNew';
 
 // Material Dashboard 2 PRO React components
 import MDAvatar from "components/MDAvatar";
@@ -149,7 +150,7 @@ const routes = [
         name: "Create Competition",
         key: "create-competition",
         route: "/competitions/create-competition",
-        component: <CreateCompetition />,
+        component: <CreateCompNew />,
       },
       /* {
         name: "Edit Competition",

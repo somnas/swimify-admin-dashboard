@@ -1,6 +1,4 @@
-
-
-import { useState } from "react";
+import React, { useState } from "react";
 
 // @mui material components
 import Grid from "@mui/material/Grid";
@@ -15,10 +13,12 @@ import MDInput from "components/MDInput";
 // NewProduct page components
 import FormField from "layouts/ecommerce/products/new-product/components/FormField";
 
-function ProductInfo() {
+export default function ProductInfo() {
+
   const [editorValue, setEditorValue] = useState(
     "<p>Some initial <strong>bold</strong> text</p><br><br><br><br>"
   );
+  const [name, setName] = useState('');
 
   return (
     <MDBox>
@@ -26,7 +26,9 @@ function ProductInfo() {
       <MDBox mt={3}>
         <Grid container spacing={3}>
           <Grid item xs={12} sm={6}>
-            <FormField type="text" label="Name" />
+            <FormField type="text" label="Name" value={name} onChange={(e) => {
+              setName(e.target.value);
+            }} />
           </Grid>
           <Grid item xs={12} sm={6}>
             <FormField type="text" label="Weight" />
@@ -87,5 +89,3 @@ function ProductInfo() {
     </MDBox>
   );
 }
-
-export default ProductInfo;
