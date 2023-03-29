@@ -71,6 +71,7 @@ export default function CreateCompNew() {
                                         onSubmit={values => {
                                             console.log(values);
                                         }}
+                                        validationSchema={validationSchema}
                                     >
                                         {(formik) => (
                                             <form onSubmit={formik.handleSubmit}>
