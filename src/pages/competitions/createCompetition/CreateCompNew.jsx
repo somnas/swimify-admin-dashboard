@@ -100,13 +100,15 @@ export default function CreateCompNew() {
                                                             back
                                                         </MDButton>
                                                     )}
-                                                    <MDButton
-                                                        variant='gradient'
-                                                        color='dark'
-                                                        onClick={!isLastStep ? handleNext : undefined}
-                                                    >
-                                                        {isLastStep ? 'send' : 'next'}
-                                                    </MDButton>
+                                                    {!isLastStep ?
+                                                        <MDButton variant='gradient' color='dark' onClick={handleNext}>
+                                                            next
+                                                        </MDButton>
+                                                        :
+                                                        <MDButton variant='gradient' color='info' type='submit'>
+                                                            send
+                                                        </MDButton>
+                                                    }
                                                 </MDBox>
                                             </form>
                                         )}
