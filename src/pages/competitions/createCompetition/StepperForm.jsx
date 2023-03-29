@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Formik, FormikConfig, FormikValues } from 'formik';
+import { Formik, Form, FormikConfig, FormikValues } from 'formik';
+import FormNavigation from './FormNavigation';
 
 export default function StepperForm({ children, initialValues, onSubmit }) {
 
@@ -35,14 +36,19 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
 
     return (
         <Formik
-            initialValues={{}}
-            onSubmit={onSubmit}
+            initialValues={{snapshot}}
+            onSubmit={handleSubmit}
             validationSchema={step.props.validationSchema}
         >
             {(formik) => (
-                <form onSubmit={formik.handleSubmit}>
-
-                </form>
+                <Form>
+                    {step}
+                    <FormNavigation
+                        isLastStep={isLastStep}
+                        stepNumber={stepNumber}
+                        onBackClick={() => previousStep(formik.values)}
+                    />
+                </Form>
             )}
         </Formik>
     );
