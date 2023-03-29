@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import DashboardLayout from 'layouts/containers/DashboardLayout';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
 import Footer from 'layouts/components/Footer';
+import InputField from './InputField';
 
 // @mui material components
 import Grid from '@mui/material/Grid';
@@ -80,26 +81,10 @@ export default function CreateCompNew() {
                                                 <MDBox mt={3}>
                                                     <Grid container spacing={3}>
                                                         <Grid item xs={12} sm={6}>
-                                                            <FormField
-                                                                id='name'
-                                                                name='name'
-                                                                label='Name'
-                                                                value={formik.values.name}
-                                                                onChange={formik.handleChange}
-                                                                error={formik.touched.name && Boolean(formik.errors.name)}
-                                                                helperText={formik.touched.name && formik.errors.name}
-                                                            />
+                                                            <InputField name='name' label='Name' />
                                                         </Grid>
                                                         <Grid item xs={12} sm={6}>
-                                                            <FormField
-                                                                id='email'
-                                                                name='email'
-                                                                label='Email'
-                                                                value={formik.values.email}
-                                                                onChange={formik.handleChange}
-                                                                error={formik.touched.email && Boolean(formik.errors.email)}
-                                                                helperText={formik.touched.email && formik.errors.email}
-                                                            />
+                                                            <InputField name='email' label='Email' />
                                                         </Grid>
                                                     </Grid>
                                                 </MDBox>
