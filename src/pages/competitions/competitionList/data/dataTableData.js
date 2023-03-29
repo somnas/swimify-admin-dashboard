@@ -1,5 +1,3 @@
-
-
 const dataTableData = {
   columns: [
     { Header: "name", accessor: "name", width: "20%" },
