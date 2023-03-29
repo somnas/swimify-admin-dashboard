@@ -54,6 +54,7 @@ import Dashboard from 'pages/dashboard/Dashboard';
 import SignIn from 'pages/authentication/signIn/SignIn';
 import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
 import CompetitionList from 'pages/competitions/competitionList/CompetitionList';
+import CompetitionList2 from 'pages/competitions/competitionList/CompetitionList2';
 import Files from 'pages/files/Files';
 import CreateCompetition from 'pages/competitions/createCompetition/CreateCompetition';
 import ProfileSettings from 'pages/profile/profileSettings/ProfileSettings';
@@ -136,7 +137,7 @@ const routes = [
         name: "Competitions",
         key: "competitions",
         route: "/competitions",
-        component: <CompetitionList />,
+        component: <CompetitionList2 />,
       },
       /* {
         name: "Competition Details",
