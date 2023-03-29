@@ -25,7 +25,8 @@ function getSteps() {
 }
 
 const validationSchema = yup.object({
-    name: yup.string().required('Name is required')
+    name: yup.string().required('Name is required'),
+    email: yup.string().email().required('Email is required')
 });
 
 export default function CreateCompNew() {
@@ -67,6 +68,7 @@ export default function CreateCompNew() {
                                 <MDBox>
                                     <Formik initialValues={{
                                         name: '',
+                                        email: '',
                                     }}
                                         onSubmit={values => {
                                             console.log(values);
@@ -89,7 +91,15 @@ export default function CreateCompNew() {
                                                             />
                                                         </Grid>
                                                         <Grid item xs={12} sm={6}>
-                                                            <FormField type="text" label="Weight" />
+                                                            <FormField
+                                                                id='email'
+                                                                name='email'
+                                                                label='Email'
+                                                                value={formik.values.email}
+                                                                onChange={formik.handleChange}
+                                                                error={formik.touched.email && Boolean(formik.errors.email)}
+                                                                helperText={formik.touched.email && formik.errors.email}
+                                                            />
                                                         </Grid>
                                                     </Grid>
                                                 </MDBox>
