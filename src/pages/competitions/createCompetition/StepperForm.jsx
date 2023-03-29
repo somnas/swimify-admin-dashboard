@@ -22,7 +22,7 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
         setStepNumber(stepNumber - 1);
     };
 
-    const handleSubmit = async (values) => {
+    const handleSubmit = async (values, actions) => {
         if (step.props.onSubmit) {
             await step.props.onSubmit(values);
         }

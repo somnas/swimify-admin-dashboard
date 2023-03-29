@@ -20,6 +20,7 @@ import FormField from './components/FormField';
 
 import { Formik } from 'formik';
 import * as yup from 'yup';
+import StepperForm, { FormStep } from './StepperForm';
 
 function getSteps() {
     return ['1. Product Info', '2. Media', '3. Social', '4. Pricing'];
@@ -67,48 +68,28 @@ export default function CreateCompNew() {
                             </MDBox>
                             <MDBox p={2}>
                                 <MDBox>
-                                    <Formik initialValues={{
-                                        name: '',
-                                        email: '',
-                                    }}
+                                    <StepperForm
+                                        initialValues={{
+                                            name: '',
+                                            email: '',
+                                        }}
                                         onSubmit={values => {
                                             console.log(values);
                                         }}
-                                        validationSchema={validationSchema}
                                     >
-                                        {(formik) => (
-                                            <form onSubmit={formik.handleSubmit}>
-                                                <MDBox mt={3}>
-                                                    <Grid container spacing={3}>
-                                                        <Grid item xs={12} sm={6}>
-                                                            <InputField name='name' label='Name' />
-                                                        </Grid>
-                                                        <Grid item xs={12} sm={6}>
-                                                            <InputField name='email' label='Email' />
-                                                        </Grid>
+                                        <FormStep stepName='Person' onSubmit={() => console.log('Step 1 submit')} validationSchema={validationSchema}>
+                                            <MDBox mt={3}>
+                                                <Grid container spacing={3}>
+                                                    <Grid item xs={12} sm={6}>
+                                                        <InputField name='name' label='Name' />
                                                     </Grid>
-                                                </MDBox>
-                                                <MDBox mt={3} width='100%' display='flex' justifyContent='space-between'>
-                                                    {activeStep === 0 ? (
-                                                        <MDBox />
-                                                    ) : (
-                                                        <MDButton variant='gradient' color='light' onClick={handleBack}>
-                                                            back
-                                                        </MDButton>
-                                                    )}
-                                                    {!isLastStep ?
-                                                        <MDButton variant='gradient' color='dark' onClick={handleNext}>
-                                                            next
-                                                        </MDButton>
-                                                        :
-                                                        <MDButton variant='gradient' color='info' type='submit'>
-                                                            send
-                                                        </MDButton>
-                                                    }
-                                                </MDBox>
-                                            </form>
-                                        )}
-                                    </Formik>
+                                                    <Grid item xs={12} sm={6}>
+                                                        <InputField name='email' label='Email' />
+                                                    </Grid>
+                                                </Grid>
+                                            </MDBox>
+                                        </FormStep>
+                                    </StepperForm>
                                 </MDBox>
                             </MDBox>
                         </Card>
