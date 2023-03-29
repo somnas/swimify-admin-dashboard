@@ -77,7 +77,11 @@ export default function CreateCompNew() {
                                             console.log(values);
                                         }}
                                     >
-                                        <FormStep stepName='Person' onSubmit={() => console.log('Step 1 submit')} validationSchema={validationSchema}>
+                                        <FormStep
+                                            stepName='Person'
+                                            onSubmit={() => console.log('Step 1 submit')}
+                                            validationSchema={validationSchema}
+                                        >
                                             <MDBox mt={3}>
                                                 <Grid container spacing={3}>
                                                     <Grid item xs={12} sm={6}>
