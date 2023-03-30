@@ -68,6 +68,13 @@ export default function EditCompetition() {
                                 <Grid item xs={12}>
                                     <Pricing />
                                 </Grid>
+                                <Grid item xs={12}>
+                                    <MDBox display='flex' justifyContent='flex-end'>
+                                        <MDButton variant='gradient' color='info'>
+                                            save
+                                        </MDButton>
+                                    </MDBox>
+                                </Grid>
                             </Grid>
                         </MDBox>
                     </Grid>
