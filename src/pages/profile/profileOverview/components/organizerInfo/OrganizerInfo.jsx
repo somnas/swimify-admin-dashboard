@@ -7,12 +7,25 @@ import Card from '@mui/material/Card';
 import MDBox from 'components/MDBox';
 import MDTypography from 'components/MDTypography';
 
-export default function ProfileInfo() {
+import organizerLogo from 'assets/images/logos/organizer_logo.png';
+
+/* 
+change password
+
+default info:
+ - organizer name
+ - organizer logo
+ - nation
+ - city
+ - pool name
+*/
+
+export default function OrganizerInfo() {
     return (
         <Card sx={{ boxShadow: 'none' }}>
             <MDBox p={1} ml={1}>
                 <MDTypography variant='h6' fontWeight='medium' textTransform='capitalize'>
-                    Profile information
+                    Organization Information
                 </MDTypography>
             </MDBox>
             <MDBox pt={1} pb={2} px={2} lineHeight={1.25}>
@@ -20,30 +33,56 @@ export default function ProfileInfo() {
                     <MDTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
                         Name
                     </MDTypography>
-                    <MDBox display='flex' alignItems='center' mb={0.5}>
+                    <MDBox display='flex' alignItems='center'>
                         <MDTypography variant='button' fontWeight='regular' color='text'>
-                            Erik Eriksson
+                            Täby Sim
                         </MDTypography>
                     </MDBox>
                 </MDBox>
                 <MDBox mt={1}>
                     <MDTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
-                        Email
+                        Nation
                     </MDTypography>
-                    <MDBox display='flex' alignItems='center' mb={0.5}>
+                    <MDBox display='flex' alignItems='center'>
                         <MDTypography variant='button' fontWeight='regular' color='text'>
-                            erik.eriksson@gmail.com
+                            SWE
                         </MDTypography>
                     </MDBox>
                 </MDBox>
                 <MDBox mt={1}>
                     <MDTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
-                        Mobile
+                        City
                     </MDTypography>
                     <MDBox display='flex' alignItems='center' mb={0.5}>
                         <MDTypography variant='button' fontWeight='regular' color='text'>
-                            +46 70 - 123 456 89
+                            Täby
                         </MDTypography>
+                    </MDBox>
+                </MDBox>
+                <MDBox mt={1}>
+                    <MDTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
+                        Pool Name
+                    </MDTypography>
+                    <MDBox display='flex' alignItems='center' mb={0.5}>
+                        <MDTypography variant='button' fontWeight='regular' color='text'>
+                            Tibblebadet
+                        </MDTypography>
+                    </MDBox>
+                </MDBox>
+                <MDBox mt={1}>
+                    <MDTypography variant='caption' fontWeight='bold' color='text' textTransform='uppercase'>
+                        Logo
+                    </MDTypography>
+                    <MDBox display='flex' alignItems='center' mb={0.5}>
+                        <MDBox
+                            component="img"
+                            src={organizerLogo}
+                            alt='organizer logo'
+                            borderRadius="lg"
+                            shadow="md"
+                            width='48px'
+                            height='48px'
+                        />
                     </MDBox>
                 </MDBox>
             </MDBox>
