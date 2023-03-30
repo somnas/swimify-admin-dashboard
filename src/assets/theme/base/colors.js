@@ -3,6 +3,10 @@ const colors = {
     default: "#f0f2f5",
   },
   text: {
+    main: "#4B4F5E",
+    focus: "#4B4F5E",
+  },
+  lightText: {
     main: "#7b809a",
     focus: "#7b809a",
   },

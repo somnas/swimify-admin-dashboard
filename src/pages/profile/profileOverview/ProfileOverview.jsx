@@ -37,6 +37,22 @@ import team1 from 'assets/images/team-1.jpg';
 import team2 from 'assets/images/team-2.jpg';
 import team3 from 'assets/images/team-3.jpg';
 import team4 from 'assets/images/team-4.jpg';
+import ProfileInfo from './components/profileInfo/ProfileInfo';
+
+/* 
+page layout
+name
+email
+mobile
+change password
+
+default info:
+ - organizer name
+ - organizer logo
+ - nation
+ - city
+ - pool name
+*/
 
 export default function ProfileOverview() {
   return (
@@ -46,10 +62,10 @@ export default function ProfileOverview() {
       <Header>
         <MDBox mt={4} mb={2}>
           <Grid container spacing={1}>
-            <Grid item xs={12} md={6} xl={4}>
-              <PlatformSettings />
+            <Grid item xs={12} md={6}>
+              <ProfileInfo />
             </Grid>
-            <Grid item xs={12} md={6} xl={4} sx={{ display: 'flex' }}>
+            <Grid item xs={12} md={6} sx={{ display: 'flex' }}>
               <Divider orientation='vertical' sx={{ ml: -2, mr: 1 }} />
               <ProfileInfoCard
                 title='profile information'
@@ -80,107 +96,9 @@ export default function ProfileOverview() {
                 action={{ route: '', tooltip: 'Edit Profile' }}
                 shadow={false}
               />
-              <Divider orientation='vertical' />
-            </Grid>
-            <Grid item xs={12} xl={4}>
-              <ProfilesList title='conversations' profiles={profilesListData} shadow={false} />
             </Grid>
           </Grid>
         </MDBox>
-        {/* <MDBox pt={2} px={2} lineHeight={1.25}>
-          <MDTypography variant='h6' fontWeight='medium'>
-            Projects
-          </MDTypography>
-          <MDBox mb={1}>
-            <MDTypography variant='button' color='text'>
-              Architects design houses
-            </MDTypography>
-          </MDBox>
-        </MDBox> */}
-        {/* <MDBox p={2}>
-          <Grid container spacing={6}>
-            <Grid item xs={12} md={6} xl={3}>
-              <DefaultProjectCard
-                image={homeDecor1}
-                label='project #2'
-                title='modern'
-                description='As Uber works through a huge amount of internal management turmoil.'
-                action={{
-                  type: 'internal',
-                  route: '/pages/profile/profile-overview',
-                  color: 'info',
-                  label: 'view project',
-                }}
-                authors={[
-                  { image: team1, name: 'Elena Morison' },
-                  { image: team2, name: 'Ryan Milly' },
-                  { image: team3, name: 'Nick Daniel' },
-                  { image: team4, name: 'Peterson' },
-                ]}
-              />
-            </Grid>
-            <Grid item xs={12} md={6} xl={3}>
-              <DefaultProjectCard
-                image={homeDecor2}
-                label='project #1'
-                title='scandinavian'
-                description='Music is something that everyone has their own specific opinion about.'
-                action={{
-                  type: 'internal',
-                  route: '/pages/profile/profile-overview',
-                  color: 'info',
-                  label: 'view project',
-                }}
-                authors={[
-                  { image: team3, name: 'Nick Daniel' },
-                  { image: team4, name: 'Peterson' },
-                  { image: team1, name: 'Elena Morison' },
-                  { image: team2, name: 'Ryan Milly' },
-                ]}
-              />
-            </Grid>
-            <Grid item xs={12} md={6} xl={3}>
-              <DefaultProjectCard
-                image={homeDecor3}
-                label='project #3'
-                title='minimalist'
-                description='Different people have different taste, and various types of music.'
-                action={{
-                  type: 'internal',
-                  route: '/pages/profile/profile-overview',
-                  color: 'info',
-                  label: 'view project',
-                }}
-                authors={[
-                  { image: team4, name: 'Peterson' },
-                  { image: team3, name: 'Nick Daniel' },
-                  { image: team2, name: 'Ryan Milly' },
-                  { image: team1, name: 'Elena Morison' },
-                ]}
-              />
-            </Grid>
-            <Grid item xs={12} md={6} xl={3}>
-              <DefaultProjectCard
-                image={homeDecor4}
-                label='project #4'
-                title='gothic'
-                description='Why would anyone pick blue over pink? Pink is obviously a better color.'
-                action={{
-                  type: 'internal',
-                  route: '/pages/profile/profile-overview',
-                  color: 'info',
-                  label: 'view project',
-                }}
-                authors={[
-                  { image: team4, name: 'Peterson' },
-                  { image: team3, name: 'Nick Daniel' },
-                  { image: team2, name: 'Ryan Milly' },
-                  { image: team1, name: 'Elena Morison' },
-                ]}
-              />
-            </Grid>
-          </Grid>
-        </MDBox> */}
       </Header>
       <Footer />
     </DashboardLayout>
