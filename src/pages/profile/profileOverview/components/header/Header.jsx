@@ -1,71 +1,48 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+
+import { useNavigate } from 'react-router-dom';
 
 // prop-types is a library for typechecking of props.
-import PropTypes from "prop-types";
+import PropTypes from 'prop-types';
 
 // @mui material components
-import Card from "@mui/material/Card";
-import Grid from "@mui/material/Grid";
-import AppBar from "@mui/material/AppBar";
-import Tabs from "@mui/material/Tabs";
-import Tab from "@mui/material/Tab";
-import Icon from "@mui/material/Icon";
+import Card from '@mui/material/Card';
+import Grid from '@mui/material/Grid';
+import { Button } from '@mui/material';
 
 // Material Dashboard 2 PRO React components
-import MDBox from "components/MDBox";
-import MDTypography from "components/MDTypography";
-import MDAvatar from "components/MDAvatar";
-
-// Material Dashboard 2 PRO React base styles
-import breakpoints from "assets/theme/base/breakpoints";
+import MDBox from 'components/MDBox';
+import MDTypography from 'components/MDTypography';
+import MDAvatar from 'components/MDAvatar';
 
 // Images
-import burceMars from "assets/images/bruce-mars.jpg";
-import backgroundImage from "assets/images/bg-profile.jpeg";
+import burceMars from 'assets/images/bruce-mars.jpg';
 
 export default function Header({ children }) {
 
-    const [tabsOrientation, setTabsOrientation] = useState("horizontal");
-    const [tabValue, setTabValue] = useState(0);
-
-    useEffect(() => {
-        // A function that sets the orientation state of the tabs.
-        function handleTabsOrientation() {
-            return window.innerWidth < breakpoints.values.sm
-                ? setTabsOrientation("vertical")
-                : setTabsOrientation("horizontal");
-        }
-
-        /** 
-         The event listener that's calling the handleTabsOrientation function when resizing the window.
-        */
-        window.addEventListener("resize", handleTabsOrientation);
-
-        // Call the handleTabsOrientation function to set the state with the initial value.
-        handleTabsOrientation();
-
-        // Remove event listener on cleanup
-        return () => window.removeEventListener("resize", handleTabsOrientation);
-    }, [tabsOrientation]);
-
-    const handleSetTabValue = (event, newValue) => setTabValue(newValue);
+    const navigate = useNavigate();
 
     return (
         <MDBox mb={5}>
             <Card sx={{ py: 2, px: 2 }}>
-                <Grid container spacing={3} alignItems="center">
+                <Grid container spacing={3} alignItems='center'>
                     <Grid item sx={{ ml: 1 }}>
-                        <MDAvatar src={burceMars} alt="profile-image" size="xl" shadow="sm" />
+                        <MDAvatar src={burceMars} alt='profile-image' size='xl' shadow='sm' />
                     </Grid>
                     <Grid item>
-                        <MDBox height="100%" mt={0.5} lineHeight={1}>
-                            <MDTypography variant="h5" fontWeight="medium">
+                        <MDBox height='100%' mt={0.5} lineHeight={1}>
+                            <MDTypography variant='h5' fontWeight='medium'>
                                 Richard Davis
                             </MDTypography>
-                            <MDTypography variant="button" color="text" fontWeight="regular">
+                            <MDTypography variant='button' color='text' fontWeight='regular'>
                                 CEO / Co-Founder
                             </MDTypography>
                         </MDBox>
+                    </Grid>
+                    <Grid container item justifyContent='flex-end' mr={1} sx={{ flex: 1 }}>
+                        <Button variant='grey' onClick={() => navigate('/account/account-settings')}>
+                            Edit Account
+                        </Button>
                     </Grid>
                 </Grid>
                 {children}
@@ -76,7 +53,7 @@ export default function Header({ children }) {
 
 // Setting default props for the Header
 Header.defaultProps = {
-    children: "",
+    children: '',
 };
 
 // Typechecking props for the Header
