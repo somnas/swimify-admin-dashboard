@@ -9,17 +9,6 @@ import MDTypography from 'components/MDTypography';
 
 import organizerLogo from 'assets/images/logos/organizer_logo.png';
 
-/* 
-change password
-
-default info:
- - organizer name
- - organizer logo
- - nation
- - city
- - pool name
-*/
-
 export default function OrganizerInfo() {
     return (
         <Card sx={{ boxShadow: 'none' }}>
