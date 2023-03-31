@@ -8,11 +8,11 @@ import {
     useMediaQuery
 } from '@mui/material';
 
-import DateElement from './components/DateElement';
-import StatusBadge from './components/StatusBadge';
+import DateElement from '../../pages/competitions/competitionList/components/DateElement';
+import StatusBadge from '../../pages/competitions/competitionList/components/StatusBadge';
 import smallCompImg from 'assets/images/sumsim_logo_small.png';
-import organizer_logo from 'assets/images/logos/organizer_logo.png'
-import flag from 'assets/images/logos/SE.svg'
+import organizer_logo from 'assets/images/logos/organizer_logo.png';
+import flag from 'assets/images/logos/SE.svg';
 
 export default function DetailedCompetitionCard({ competition, index }) {
 

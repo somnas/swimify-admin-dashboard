@@ -21,6 +21,8 @@ import ProductInfo from "./components/ProductInfo";
 
 // Data
 import dataTableData from "./data/dataTableData";
+import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
+import CompetitionInfo from './components/competitionInfo/CompetitionInfo';
 
 export default function CompetitionDetails() {
 
@@ -34,16 +36,18 @@ export default function CompetitionDetails() {
                     <MDBox p={3}>
                         <MDBox mb={3}>
                             <MDTypography variant="h5" fontWeight="medium">
-                                Product Details
+                                Competition Details
                             </MDTypography>
                         </MDBox>
 
-                        <Grid container spacing={3}>
-                            <Grid item xs={12} lg={6} xl={5}>
-                                <ProductImages />
+                        <Grid container spacing={1}>
+                            <Grid item xs={12} sx={{ bgcolor: '' }}>
+                                <MDBox shadow='md' sx={{ borderRadius: 2 }}>
+                                    <DetailedCompetitionCard competition={dummyComp} index={0} />
+                                </MDBox>
                             </Grid>
-                            <Grid item xs={12} lg={5} sx={{ mx: "auto" }}>
-                                <ProductInfo />
+                            <Grid item xs={12} sx={{}}>
+                                <CompetitionInfo />
                             </Grid>
                         </Grid>
 
@@ -67,3 +71,18 @@ export default function CompetitionDetails() {
         </DashboardLayout>
     );
 }
+
+const dummyComp = {
+    "id": "c7063ba4-24bf-4bbe-9d80-1440026e2831",
+    "name": "SM/Para-SM/JSM (50m) 2019",
+    "seo_text": "SM-Para-SM-JSM-50m-2019",
+    "startDate": "2022-09-12",
+    "endDate": "2022-09-20",
+    "large_image": "https://cdn-dev.livetiming.se/competition_files/c7063ba4-24bf-4bbe-9d80-1440026e2831/5cuw9l5nun477_logo_large.png",
+    "small_image": "https://cdn-dev.livetiming.se/competition_files/c7063ba4-24bf-4bbe-9d80-1440026e2831/5cuw9l5nun5en_logo_small.png",
+    "nation_code": "SWE",
+    "organizer": "Svensk Simidrott",
+    "organizer_logo": "https://cdn-dev.livetiming.se/competition_files/c7063ba4-24bf-4bbe-9d80-1440026e2831/5r0np9l76aks9l_organizer_logo.png",
+    "pool_name": "Lindängsbadet",
+    "city": "Malmö"
+};

@@ -4,7 +4,7 @@ import DashboardLayout from 'layouts/containers/DashboardLayout';
 import Card from '@mui/material/Card';
 import MDBox from 'components/MDBox';
 import MDTypography from 'components/MDTypography';
-import DetailedCompetitionCard from './DetailedCompetitionCard';
+import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
 
 export default function CompetitionList2() {
 
