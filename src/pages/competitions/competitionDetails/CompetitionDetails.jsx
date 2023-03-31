@@ -24,6 +24,7 @@ import dataTableData from "./data/dataTableData";
 import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
 import CompetitionInfo from './components/competitionInfo/CompetitionInfo';
 import CompetitionFiles from './components/competitionFiles/CompetitionFiles';
+import DetailPageCompetitionCard from 'layouts/components/DetailPageCompetitionCard';
 
 export default function CompetitionDetails() {
 
@@ -42,7 +43,7 @@ export default function CompetitionDetails() {
                         </MDBox>
 
                         <MDBox mb={2} shadow='md' sx={{ borderRadius: 2 }}>
-                            <DetailedCompetitionCard competition={dummyComp} index={0} />
+                            <DetailPageCompetitionCard competition={dummyComp} />
                         </MDBox>
 
                         <MDBox mb={2} mx={1}>

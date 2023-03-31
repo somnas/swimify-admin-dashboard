@@ -1,0 +1,21 @@
+/* .flag.size-m {
+    width: 20px;
+    height: 15px;
+} */
+
+.flag.size-s.border-radius {
+    border-radius: 2px;
+}
+
+.flag.size-m.border-radius {
+    border-radius: 2px;
+}
+
+.flag.size-l.border-radius {
+    border-radius: 4px !important;
+}
+
+/* .flag.size-l {
+    width: 32px;
+    height: 24px;
+} */

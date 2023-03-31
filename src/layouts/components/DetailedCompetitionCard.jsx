@@ -8,8 +8,8 @@ import {
     useMediaQuery
 } from '@mui/material';
 
-import DateElement from '../../pages/competitions/competitionList/components/DateElement';
-import StatusBadge from '../../pages/competitions/competitionList/components/StatusBadge';
+import DateElement from './DateElement';
+import StatusBadge from './StatusBadge';
 import smallCompImg from 'assets/images/sumsim_logo_small.png';
 import organizer_logo from 'assets/images/logos/organizer_logo.png';
 import flag from 'assets/images/logos/SE.svg';

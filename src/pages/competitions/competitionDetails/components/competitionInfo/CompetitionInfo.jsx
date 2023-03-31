@@ -6,7 +6,7 @@ import { Grid } from '@mui/material';
 
 export default function CompetitionInfo({ competition }) {
 
-    console.log(competition);
+    //console.log(competition);
 
     return (
         <Grid container>
