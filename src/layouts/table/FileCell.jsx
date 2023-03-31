@@ -11,8 +11,7 @@ import InsertDriveFileIcon from '@mui/icons-material/InsertDriveFile';
 export default function FileCell({ image, name }) {
     return (
         <MDBox display="flex" alignItems="center" pr={2}>
-            <MDBox mr={2} /* width='32px' height='32px' */>
-                {/* <MDBox component='img' width='32px' height='32px' src={image} alt={name} /> */}
+            <MDBox mr={2} display="flex" alignItems="center">
                 <InsertDriveFileIcon fontSize='large' sx={{ bgcolor: '', height: 32 }} />
             </MDBox>
             <MDTypography variant="button" fontWeight="medium">
