@@ -45,8 +45,8 @@ export default function CompetitionDetails() {
                             <DetailedCompetitionCard competition={dummyComp} index={0} />
                         </MDBox>
 
-                        <MDBox mb={2}>
-                            <CompetitionInfo />
+                        <MDBox mb={2} mx={1}>
+                            <CompetitionInfo competition={dummyComp} />
                         </MDBox>
 
                         <MDBox mb={2}>
