@@ -13,7 +13,7 @@ import MDBox from "components/MDBox";
 import MDTypography from "components/MDTypography";
 
 // Material Dashboard 2 PRO React examples
-import DataTable from "examples/Tables/DataTable";
+import DataTable from "./components/DataTable";
 
 // ProductPage page components
 import ProductImages from "./components/ProductImages";
