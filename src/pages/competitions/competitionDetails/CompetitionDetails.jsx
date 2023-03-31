@@ -23,6 +23,7 @@ import ProductInfo from "./components/ProductInfo";
 import dataTableData from "./data/dataTableData";
 import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
 import CompetitionInfo from './components/competitionInfo/CompetitionInfo';
+import CompetitionFiles from './components/competitionFiles/CompetitionFiles';
 
 export default function CompetitionDetails() {
 
@@ -32,29 +33,30 @@ export default function CompetitionDetails() {
         <DashboardLayout>
             <DashboardNavbar title={competitionName} />
             <MDBox py={3}>
-                <Card sx={{ overflow: "visible" }}>
+                <Card sx={{}}>
                     <MDBox p={3}>
-                        <MDBox mb={3}>
+                        <MDBox mb={2}>
                             <MDTypography variant="h5" fontWeight="medium">
                                 Competition Details
                             </MDTypography>
                         </MDBox>
 
-                        <Grid container spacing={1}>
-                            <Grid item xs={12} sx={{ bgcolor: '' }}>
-                                <MDBox shadow='md' sx={{ borderRadius: 2 }}>
-                                    <DetailedCompetitionCard competition={dummyComp} index={0} />
-                                </MDBox>
-                            </Grid>
-                            <Grid item xs={12} sx={{}}>
-                                <CompetitionInfo />
-                            </Grid>
-                        </Grid>
+                        <MDBox mb={2} shadow='md' sx={{ borderRadius: 2 }}>
+                            <DetailedCompetitionCard competition={dummyComp} index={0} />
+                        </MDBox>
 
-                        <MDBox mt={8} mb={2}>
+                        <MDBox mb={2}>
+                            <CompetitionInfo />
+                        </MDBox>
+
+                        <MDBox mb={2}>
+                            <CompetitionFiles />
+                        </MDBox>
+
+                        <MDBox mt={6} mb={2}>
                             <MDBox mb={1} ml={2}>
                                 <MDTypography variant="h5" fontWeight="medium">
-                                    Other Products
+                                    Users
                                 </MDTypography>
                             </MDBox>
                             <DataTable

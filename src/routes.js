@@ -244,7 +244,7 @@ const routes = [
       },
     ], */
   },
-  {
+  /* {
     type: "collapse",
     name: "Files",
     key: "files",
@@ -252,7 +252,7 @@ const routes = [
     icon: <Icon fontSize="medium">folder</Icon>,
     noCollapse: true,
     component: <Files />
-  },
+  }, */
   /* {
     type: "collapse",
     name: "Applications",
