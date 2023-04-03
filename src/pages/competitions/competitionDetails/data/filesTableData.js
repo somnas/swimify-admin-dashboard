@@ -19,7 +19,7 @@ const filesTableData = {
         { Header: "file", accessor: "file", width: "50%" },
         { Header: "description", accessor: "description", align: "center" },
         { Header: "download", accessor: "download", align: "center" },
-        { Header: "id", accessor: "id", align: "center" },
+        { Header: "uploaded", accessor: "uploaded", align: "center" },
     ],
 
     rows: [
@@ -36,7 +36,7 @@ const filesTableData = {
                     <MDProgress variant="gradient" value={80} color="success" />
                 </MDBox>
             ),
-            id: <DefaultCell>230019</DefaultCell>,
+            uploaded: <DefaultCell>2023/04/02</DefaultCell>,
         },
         {
             file: <FileCell image={chairPink} name="Bar Height Swivel Barstool" />,
@@ -51,7 +51,7 @@ const filesTableData = {
                     <MDProgress variant="gradient" value={90} color="success" />
                 </MDBox>
             ),
-            id: <DefaultCell>87120</DefaultCell>,
+            uploaded: <DefaultCell>2023/04/02</DefaultCell>,
         },
         {
             file: <FileCell image={chairSteel} name="Signature Design by Ashley" />,
@@ -66,7 +66,7 @@ const filesTableData = {
                     <MDProgress variant="gradient" value={60} color="warning" />
                 </MDBox>
             ),
-            id: <DefaultCell>412301</DefaultCell>,
+            uploaded: <DefaultCell>2023/04/02</DefaultCell>,
         },
     ],
 };
