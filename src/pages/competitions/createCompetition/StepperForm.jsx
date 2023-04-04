@@ -45,7 +45,7 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
             {(formik) => (
                 <Form>
 
-                    <Stepper activeStep={stepNumber}>
+                    <Stepper activeStep={stepNumber} alternativeLabel>
                         {steps.map(currentStep => {
                             const label = currentStep.props.stepName;
 

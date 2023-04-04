@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import DashboardLayout from 'layouts/containers/DashboardLayout';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
@@ -7,9 +7,6 @@ import InputField from './InputField';
 
 // @mui material components
 import Grid from '@mui/material/Grid';
-import Stepper from '@mui/material/Stepper';
-import Step from '@mui/material/Step';
-import StepLabel from '@mui/material/StepLabel';
 import Card from '@mui/material/Card';
 
 // Material Dashboard 2 PRO React components
@@ -18,13 +15,8 @@ import MDButton from 'components/MDButton';
 import MDTypography from 'components/MDTypography';
 import FormField from './components/FormField';
 
-import { Formik } from 'formik';
 import * as yup from 'yup';
 import StepperForm, { FormStep } from './StepperForm';
-
-function getSteps() {
-    return ['1. Personal Info', '2. Address', '3. Social', '4. Pricing'];
-}
 
 const validationSchema = yup.object({
     name: yup.string().required('Name is required'),
@@ -32,13 +24,6 @@ const validationSchema = yup.object({
 });
 
 export default function CreateCompNew() {
-
-    const [activeStep, setActiveStep] = useState(0);
-    const steps = getSteps();
-    const isLastStep = activeStep === steps.length - 1;
-
-    const handleNext = () => setActiveStep(activeStep + 1);
-    const handleBack = () => setActiveStep(activeStep - 1);
 
     return (
         <DashboardLayout>
@@ -57,15 +42,6 @@ export default function CreateCompNew() {
                             </MDTypography>
                         </MDBox>
                         <Card>
-                            <MDBox mt={-3} mb={3} mx={2}>
-                                <Stepper activeStep={activeStep} alternativeLabel>
-                                    {steps.map((label) => (
-                                        <Step key={label}>
-                                            <StepLabel>{label}</StepLabel>
-                                        </Step>
-                                    ))}
-                                </Stepper>
-                            </MDBox>
                             <MDBox p={2}>
                                 <MDBox>
                                     <StepperForm
