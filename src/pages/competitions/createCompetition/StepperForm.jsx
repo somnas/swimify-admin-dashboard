@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+
 import { Formik, Form, FormikConfig, FormikValues } from 'formik';
 import FormNavigation from './FormNavigation';
+import { Stepper, Step, StepLabel } from '@mui/material';
 
 export default function StepperForm({ children, initialValues, onSubmit }) {
 
@@ -36,12 +38,25 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
 
     return (
         <Formik
-            initialValues={{snapshot}}
+            initialValues={{ snapshot }}
             onSubmit={handleSubmit}
             validationSchema={step.props.validationSchema}
         >
             {(formik) => (
                 <Form>
+
+                    <Stepper activeStep={stepNumber}>
+                        {steps.map(currentStep => {
+                            const label = currentStep.props.stepName;
+
+                            return (
+                                <Step key={label}>
+                                    <StepLabel>{label}</StepLabel>
+                                </Step>
+                            )
+                        })}
+                    </Stepper>
+
                     {step}
                     <FormNavigation
                         isLastStep={isLastStep}
