@@ -23,7 +23,7 @@ import * as yup from 'yup';
 import StepperForm, { FormStep } from './StepperForm';
 
 function getSteps() {
-    return ['1. Product Info', '2. Media', '3. Social', '4. Pricing'];
+    return ['1. Personal Info', '2. Address', '3. Social', '4. Pricing'];
 }
 
 const validationSchema = yup.object({
@@ -72,6 +72,8 @@ export default function CreateCompNew() {
                                         initialValues={{
                                             name: '',
                                             email: '',
+                                            street: '',
+                                            city: '',
                                         }}
                                         onSubmit={values => {
                                             console.log(values);
@@ -84,12 +86,23 @@ export default function CreateCompNew() {
                                         >
                                             <MDBox mt={3}>
                                                 <Grid container spacing={3}>
-                                                    <Grid item xs={12} sm={6}>
-                                                        <InputField name='name' label='Name' />
-                                                    </Grid>
-                                                    <Grid item xs={12} sm={6}>
-                                                        <InputField name='email' label='Email' />
-                                                    </Grid>
+                                                    <InputField name='name' label='Name' />
+                                                    <InputField name='email' label='Email' />
+                                                </Grid>
+                                            </MDBox>
+                                        </FormStep>
+                                        <FormStep
+                                            stepName='Address'
+                                            onSubmit={() => console.log('Step 2 submit')}
+                                            validationSchema={yup.object({
+                                                street: yup.string().required('Street is required'),
+                                                city: yup.string().required('City is required')
+                                            })}
+                                        >
+                                            <MDBox mt={3}>
+                                                <Grid container spacing={3}>
+                                                    <InputField name='street' label='Street' />
+                                                    <InputField name='city' label='City' />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>

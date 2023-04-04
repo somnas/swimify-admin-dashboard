@@ -15,7 +15,7 @@ export default function FormNavigation({ stepNumber, isLastStep, onBackClick, on
                 </MDButton>
             )}
             {!isLastStep ?
-                <MDButton variant='gradient' color='dark' onClick={onNextClick}>
+                <MDButton variant='gradient' color='dark' type='submit' onClick={onNextClick}>
                     next
                 </MDButton>
                 :
