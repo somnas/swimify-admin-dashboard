@@ -72,7 +72,7 @@ export default function CreateCompNew() {
                                             </MDBox>
                                         </FormStep>
                                         <FormStep
-                                            stepName='Address'
+                                            stepName='Competition'
                                             onSubmit={() => console.log('Step 2 submit')}
                                             validationSchema={yup.object({
                                                 street: yup.string().required('Street is required'),
@@ -81,8 +81,14 @@ export default function CreateCompNew() {
                                         >
                                             <MDBox mt={3}>
                                                 <Grid container spacing={3}>
-                                                    <InputField name='street' label='Street' />
+                                                    <InputField name='competition_name' label='Competition Name' />
+                                                    <InputField name='competition_image' label='Competition Image' />
+                                                    <InputField name='nation' label='Nation' />
                                                     <InputField name='city' label='City' />
+                                                    <InputField name='pool_name' label='Pool Name' />
+                                                    <InputField name='start_date' label='Start Date' />
+                                                    <InputField name='end_date' label='End Date' />
+                                                    <InputField name='superlive' label='Superlive' />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
