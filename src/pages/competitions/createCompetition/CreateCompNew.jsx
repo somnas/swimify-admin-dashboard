@@ -56,14 +56,18 @@ export default function CreateCompNew() {
                                         }}
                                     >
                                         <FormStep
-                                            stepName='Person'
+                                            stepName='Organizer'
                                             onSubmit={() => console.log('Step 1 submit')}
                                             validationSchema={validationSchema}
                                         >
                                             <MDBox mt={3}>
                                                 <Grid container spacing={3}>
-                                                    <InputField name='name' label='Name' />
-                                                    <InputField name='email' label='Email' />
+                                                    <InputField name='organizer_name' label='Organizer Name' />
+                                                    <InputField name='organizer_logo' label='Organizer Logo' />
+                                                    <InputField name='contact_person_first_name' label='Contact Person First Name' />
+                                                    <InputField name='contact_person_last_name' label='Contact Person Last Name' />
+                                                    <InputField name='contact_person_email' label='Contact Person Email' />
+                                                    <InputField name='contact_person_phone' label='Contact Person Phone' />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
