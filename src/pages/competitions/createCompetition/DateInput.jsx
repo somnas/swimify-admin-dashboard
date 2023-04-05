@@ -8,20 +8,22 @@ import { Grid } from '@mui/material';
 
 export default function DateInput({ input, label, ...rest }) {
 
-    const [selectedDate, setSelectedDate] = useState('');
-    console.log(selectedDate);
+    const [shrinkLabel, setShrinkLabel] = useState({ shrink: false });
 
-    const labelProps = {
-        shrink: selectedDate ? true : false
+    const handleChange = (value) => {
+        rest.onChange(value);
+        if (value) {
+            setShrinkLabel({ shrink: true });
+        }
     };
 
     return (
         <Grid item xs={12} sm={6}>
             <Flatpickr
                 {...rest}
-                onChange={(e) => setSelectedDate(e)}
+                onChange={(value) => handleChange(value)}
                 render={({ defaultValue }, ref) => (
-                    <MDInput label={label} {...input} defaultValue={defaultValue} inputRef={ref} fullWidth InputLabelProps={labelProps} />
+                    <MDInput label={label} {...input} defaultValue={defaultValue} inputRef={ref} fullWidth InputLabelProps={shrinkLabel} />
                 )}
             />
         </Grid>

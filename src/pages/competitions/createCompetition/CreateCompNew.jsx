@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import DashboardLayout from 'layouts/containers/DashboardLayout';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
@@ -29,6 +29,8 @@ const validationSchema = yup.object({
 });
 
 export default function CreateCompNew() {
+
+    const [startDate, setStartDate] = useState('');
 
     return (
         <DashboardLayout>
@@ -70,7 +72,7 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                    <DateInput label='Start date' />
+                                                    <DateInput label='Start date' onChange={setStartDate} />
                                                     <DateInput label='End date' />
                                                 </Grid>
                                             </MDBox>
