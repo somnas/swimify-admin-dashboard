@@ -36,10 +36,6 @@ export default function CreateCompNew() {
     const [endDate, setEndDate] = useState('');
     const [checked, setChecked] = useState(false);
 
-    const handleChange = (event) => {
-        setChecked(event.target.checked);
-    };
-
     return (
         <DashboardLayout>
             <DashboardNavbar />
@@ -80,12 +76,7 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                    {/* <Switch
-                                                        checked={checked}
-                                                        onChange={handleChange}
-                                                        disableRipple
-                                                    /> */}
-                                                    <SwitchInput label='Superlive' />
+                                                    <SwitchInput label='Superlive' setChecked={setChecked} />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
