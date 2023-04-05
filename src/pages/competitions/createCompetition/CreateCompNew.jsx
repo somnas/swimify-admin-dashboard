@@ -8,6 +8,7 @@ import InputField from './InputField';
 // @mui material components
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
+import Switch from '@mui/material/Switch';
 
 // Material Dashboard 2 PRO React components
 import MDBox from 'components/MDBox';
@@ -19,6 +20,7 @@ import * as yup from 'yup';
 import StepperForm, { FormStep } from './StepperForm';
 import MDDatePicker from 'components/MDDatePicker';
 import DateInput from './DateInput';
+import SwitchInput from './SwitchInput';
 
 const validationSchema = yup.object({
     organizer_name: yup.string().required('Organizer name is required'),
@@ -32,6 +34,11 @@ export default function CreateCompNew() {
 
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
+    const [checked, setChecked] = useState(false);
+
+    const handleChange = (event) => {
+        setChecked(event.target.checked);
+    };
 
     return (
         <DashboardLayout>
@@ -73,7 +80,12 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                    
+                                                    {/* <Switch
+                                                        checked={checked}
+                                                        onChange={handleChange}
+                                                        disableRipple
+                                                    /> */}
+                                                    <SwitchInput />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>

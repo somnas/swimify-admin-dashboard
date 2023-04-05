@@ -77,6 +77,7 @@ const colors = {
     main: '#F4C647',
     contrastText: '#000'
   },
+
   gradients: {
     primary: {
       main: "#EC407A",
@@ -111,6 +112,7 @@ const colors = {
       state: "#191919",
     },
   },
+
   socialMediaColors: {
     facebook: {
       main: "#3b5998",
@@ -161,6 +163,7 @@ const colors = {
       dark: "#2a3749",
     },
   },
+
   badgeColors: {
     primary: {
       background: "#f8b3ca",
@@ -195,6 +198,7 @@ const colors = {
       text: "#1e2e4a",
     },
   },
+
   coloredShadows: {
     primary: "#e91e62",
     secondary: "#110e0e",
@@ -205,6 +209,7 @@ const colors = {
     light: "#adb5bd",
     dark: "#404040",
   },
+  
   inputBorderColor: "#d2d6da",
   tabs: {
     indicator: { boxShadow: "#ddd" },
