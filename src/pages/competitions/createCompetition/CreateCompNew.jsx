@@ -28,6 +28,7 @@ const validationSchema = yup.object({
     contact_person_last_name: yup.string().required('Last name is required'),
     contact_person_email: yup.string().email().required('Email is required'),
     contact_person_phone: yup.string().required('Phone is required'),
+    superlive: yup.boolean()
 });
 
 export default function CreateCompNew() {
@@ -76,11 +77,11 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                    <SwitchInput label='Superlive' setChecked={setChecked} />
+                                                    <SwitchInput name='superlive' label='Superlive' setChecked={setChecked} />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
-                                        <FormStep
+                                        {/* <FormStep
                                             stepName='Competition'
                                             onSubmit={() => console.log('Step 2 submit')}
                                             validationSchema={yup.object({
@@ -105,7 +106,7 @@ export default function CreateCompNew() {
                                                     <InputField name='superlive' label='Superlive' />
                                                 </Grid>
                                             </MDBox>
-                                        </FormStep>
+                                        </FormStep> */}
                                     </StepperForm>
                                 </MDBox>
                             </MDBox>
