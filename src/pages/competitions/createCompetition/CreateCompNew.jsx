@@ -19,8 +19,11 @@ import * as yup from 'yup';
 import StepperForm, { FormStep } from './StepperForm';
 
 const validationSchema = yup.object({
-    name: yup.string().required('Name is required'),
-    email: yup.string().email().required('Email is required')
+    organizer_name: yup.string().required('Organizer name is required'),
+    contact_person_first_name: yup.string().required('First name is required'),
+    contact_person_last_name: yup.string().required('Last name is required'),
+    contact_person_email: yup.string().email().required('Email is required'),
+    contact_person_phone: yup.string().required('Phone is required'),
 });
 
 export default function CreateCompNew() {
@@ -45,12 +48,9 @@ export default function CreateCompNew() {
                             <MDBox p={2}>
                                 <MDBox>
                                     <StepperForm
-                                        initialValues={{
-                                            name: '',
-                                            email: '',
-                                            street: '',
-                                            city: '',
-                                        }}
+                                        initialValues={
+                                            initialValues
+                                        }
                                         onSubmit={values => {
                                             console.log(values);
                                         }}
@@ -103,3 +103,21 @@ export default function CreateCompNew() {
         </DashboardLayout>
     );
 }
+
+
+const initialValues = {
+    organizer_name: '',
+    organizer_logo: '',
+    contact_person_first_name: '',
+    contact_person_last_name: '',
+    contact_person_email: '',
+    contact_person_phone: '',
+    competition_name: '',
+    competition_image: '',
+    nation: '',
+    city: '',
+    pool_name: '',
+    start_date: '',
+    end_date: '',
+    superlive: ''
+};
