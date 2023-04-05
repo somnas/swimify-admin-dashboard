@@ -31,6 +31,7 @@ const validationSchema = yup.object({
 export default function CreateCompNew() {
 
     const [startDate, setStartDate] = useState('');
+    const [endDate, setEndDate] = useState('');
 
     return (
         <DashboardLayout>
@@ -72,8 +73,7 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                    <DateInput label='Start date' onChange={setStartDate} />
-                                                    <DateInput label='End date' />
+                                                    
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
@@ -97,8 +97,8 @@ export default function CreateCompNew() {
                                                     <InputField name='nation' label='Nation' />
                                                     <InputField name='city' label='City' />
                                                     <InputField name='pool_name' label='Pool Name' />
-                                                    <InputField name='start_date' label='Start Date' />
-                                                    <InputField name='end_date' label='End Date' />
+                                                    <DateInput label='Start Date' onChange={setStartDate} />
+                                                    <DateInput label='End Date' onChange={setEndDate} />
                                                     <InputField name='superlive' label='Superlive' />
                                                 </Grid>
                                             </MDBox>
