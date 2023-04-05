@@ -17,6 +17,8 @@ import FormField from './components/FormField';
 
 import * as yup from 'yup';
 import StepperForm, { FormStep } from './StepperForm';
+import MDDatePicker from 'components/MDDatePicker';
+import DateInput from './DateInput';
 
 const validationSchema = yup.object({
     organizer_name: yup.string().required('Organizer name is required'),
@@ -68,6 +70,8 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
+                                                    <DateInput label='Start date' />
+                                                    <DateInput label='End date' />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
@@ -75,8 +79,13 @@ export default function CreateCompNew() {
                                             stepName='Competition'
                                             onSubmit={() => console.log('Step 2 submit')}
                                             validationSchema={yup.object({
-                                                street: yup.string().required('Street is required'),
-                                                city: yup.string().required('City is required')
+                                                competition_name: yup.string().required('Competition name is required'),
+                                                nation: yup.string().required('Nation is required'),
+                                                city: yup.string().required('City is required'),
+                                                pool_name: yup.string().required('Pool name is required'),
+                                                start_date: yup.date().required('Start date is required'),
+                                                end_date: yup.date().required('End date is required'),
+                                                superlive: yup.boolean(),
                                             })}
                                         >
                                             <MDBox mt={3}>
