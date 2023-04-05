@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import { Grid, Switch, Box } from '@mui/material';
+import { Grid, Switch, Box, FormControlLabel, Typography } from '@mui/material';
 
-export default function SwitchInput() {
+export default function SwitchInput({ label }) {
 
     const [checked, setChecked] = useState(false);
 
@@ -12,11 +12,14 @@ export default function SwitchInput() {
 
     return (
         <Grid item xs={12} sm={6}>
-            <Box sx={{ border: '1px solid #d2d6da', borderRadius: 1.5, py: 0.2 }}>
+            <Box sx={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', border: '1px solid #d2d6da', borderRadius: 1.5, py: 0.2, /* p: '0.75rem', */ }}>
+                <Typography fontSize='0.875rem' fontWeight={400} sx={{ bgcolor: '', ml: '12px', }}>Superlive</Typography>
                 <Switch
                     checked={checked}
                     onChange={handleChange}
+                    label={label}
                     disableRipple
+                    sx={{ bgcolor: '' }}
                 />
             </Box>
         </Grid>

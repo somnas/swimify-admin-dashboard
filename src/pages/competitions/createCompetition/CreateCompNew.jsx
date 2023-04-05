@@ -85,7 +85,7 @@ export default function CreateCompNew() {
                                                         onChange={handleChange}
                                                         disableRipple
                                                     /> */}
-                                                    <SwitchInput />
+                                                    <SwitchInput label='Superlive' />
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
