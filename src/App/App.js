@@ -7,6 +7,8 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { ThemeProvider } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import Icon from "@mui/material/Icon";
+import { LocalizationProvider } from '@mui/x-date-pickers';
+import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 // Material Dashboard 2 PRO React components
 import MDBox from "components/MDBox";
@@ -137,29 +139,31 @@ export default function App() {
   );
 
   return (
-    <ThemeProvider theme={darkMode ? themeDark : theme}>
-      <CssBaseline />
-      {layout === "dashboard" && (
-        <>
-          <Sidenav
-            color={sidenavColor}
-            brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-            brandName="Swimify Admin"
-            routes={routes}
-            onMouseEnter={handleOnMouseEnter}
-            onMouseLeave={handleOnMouseLeave}
-          />
-          {/* <Configurator />
+    <LocalizationProvider dateAdapter={AdapterDateFns}>
+      <ThemeProvider theme={darkMode ? themeDark : theme}>
+        <CssBaseline />
+        {layout === "dashboard" && (
+          <>
+            <Sidenav
+              color={sidenavColor}
+              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+              brandName="Swimify Admin"
+              routes={routes}
+              onMouseEnter={handleOnMouseEnter}
+              onMouseLeave={handleOnMouseLeave}
+            />
+            {/* <Configurator />
           {configsButton} */}
-        </>
-      )}
-      {/* {layout === "vr" && <Configurator />} */}
-      <Routes>
-        {getRoutes(routes)}
-        <Route path="/competition/:competitionId" element={<CompetitionDetails />} />
-        <Route path="/competition/:competitionId/edit" element={<EditCompetition />} />
-        <Route path="*" element={<Navigate to="/dashboard" />} />
-      </Routes>
-    </ThemeProvider>
+          </>
+        )}
+        {/* {layout === "vr" && <Configurator />} */}
+        <Routes>
+          {getRoutes(routes)}
+          <Route path="/competition/:competitionId" element={<CompetitionDetails />} />
+          <Route path="/competition/:competitionId/edit" element={<EditCompetition />} />
+          <Route path="*" element={<Navigate to="/dashboard" />} />
+        </Routes>
+      </ThemeProvider>
+    </LocalizationProvider>
   );
 }

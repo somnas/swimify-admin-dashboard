@@ -8,9 +8,11 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
 
     const [stepNumber, setStepNumber] = useState(0);
     const [snapshot, setSnapshot] = useState(initialValues);
+    console.log(snapshot);
 
     const steps = React.Children.toArray(children);
     const step = steps[stepNumber];
+    //console.log(step);
     const totalSteps = steps.length;
     const isLastStep = stepNumber === totalSteps - 1;
 
@@ -29,6 +31,7 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
             await step.props.onSubmit(values, actions);
         }
         if (isLastStep) {
+            console.log('submit last step');
             return onSubmit(values, actions);
         } else {
             actions.setTouched({});
