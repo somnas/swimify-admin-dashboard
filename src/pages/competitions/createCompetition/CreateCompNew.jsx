@@ -80,6 +80,7 @@ export default function CreateCompNew() {
                                             stepName='Competition'
                                             onSubmit={() => console.log('Step 2 submit')}
                                             validationSchema={yup.object({
+                                                //TODO: something with validation making the form not submit
                                                 /* competition_name: yup.string().required('Competition name is required'),
                                                 competition_image: yup.string().url(),
                                                 nation: yup.string().required('Nation is required'),
