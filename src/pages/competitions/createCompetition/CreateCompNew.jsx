@@ -102,8 +102,8 @@ export default function CreateCompNew() {
                                                     <InputField name='nation' label='Nation' />
                                                     <InputField name='city' label='City' />
                                                     <InputField name='pool_name' label='Pool Name' />
-                                                    <DateInput name='start_date' label='Start Date' /* onChange={setStartDate} */ />
-                                                    <DateInput name='end_date' label='End Date' /* onChange={setEndDate} */ />
+                                                    <DateInput name='start_date' label='Start Date' onChange={setStartDate} />
+                                                    <DateInput name='end_date' label='End Date' onChange={setEndDate} />
                                                     <SwitchInput name='superlive' label='Superlive' />
                                                 </Grid>
                                             </MDBox>
@@ -128,12 +128,12 @@ const initialValues = {
     contact_person_last_name: '',
     contact_person_email: '',
     contact_person_phone: '',
-    //competition_name: '',
-    //competition_image: '',
-    //nation: '',
-    //city: '',
-    //pool_name: '',
-    //start_date: '',
-    //end_date: '',
+    competition_name: '',
+    competition_image: '',
+    nation: '',
+    city: '',
+    pool_name: '',
+    start_date: '',
+    end_date: '',
     superlive: false
 };
