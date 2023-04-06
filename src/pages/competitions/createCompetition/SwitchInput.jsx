@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 
 import { Grid, Switch, Box, FormControlLabel, Typography } from '@mui/material';
+import { FieldConfig, useField } from 'formik';
 
-export default function SwitchInput({ label, setChecked }) {
-
-    //const [checked, setChecked] = useState(false);
+export default function SwitchInput({ label, /* setChecked, */ ...props }) {
+    
+    const [field, meta] = useField(props);
+    const [checked, setChecked] = useState(false);
 
     const handleChange = (event) => {
         setChecked(event.target.checked);
@@ -18,6 +20,9 @@ export default function SwitchInput({ label, setChecked }) {
                     //checked={checked}
                     onChange={handleChange}
                     disableRipple
+                    {...field}
+                    {...props}
+                    //error={meta.touched && Boolean(meta.error)}
                     sx={{ bgcolor: '' }}
                 />
             </Box>

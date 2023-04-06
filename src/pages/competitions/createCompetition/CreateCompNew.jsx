@@ -24,6 +24,7 @@ import SwitchInput from './SwitchInput';
 
 const validationSchema = yup.object({
     organizer_name: yup.string().required('Organizer name is required'),
+    organizer_logo: yup.string(),
     contact_person_first_name: yup.string().required('First name is required'),
     contact_person_last_name: yup.string().required('Last name is required'),
     contact_person_email: yup.string().email().required('Email is required'),
@@ -77,11 +78,11 @@ export default function CreateCompNew() {
                                                     <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                     <InputField name='contact_person_email' label='Contact Person Email' />
                                                     <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                    <SwitchInput name='superlive' label='Superlive' setChecked={setChecked} />
+                                                    
                                                 </Grid>
                                             </MDBox>
                                         </FormStep>
-                                        {/* <FormStep
+                                        <FormStep
                                             stepName='Competition'
                                             onSubmit={() => console.log('Step 2 submit')}
                                             validationSchema={yup.object({
@@ -101,12 +102,12 @@ export default function CreateCompNew() {
                                                     <InputField name='nation' label='Nation' />
                                                     <InputField name='city' label='City' />
                                                     <InputField name='pool_name' label='Pool Name' />
-                                                    <DateInput label='Start Date' onChange={setStartDate} />
-                                                    <DateInput label='End Date' onChange={setEndDate} />
-                                                    <InputField name='superlive' label='Superlive' />
+                                                    <DateInput name='start_date' label='Start Date' /* onChange={setStartDate} */ />
+                                                    <DateInput name='end_date' label='End Date' /* onChange={setEndDate} */ />
+                                                    <SwitchInput name='superlive' label='Superlive' />
                                                 </Grid>
                                             </MDBox>
-                                        </FormStep> */}
+                                        </FormStep>
                                     </StepperForm>
                                 </MDBox>
                             </MDBox>
@@ -127,12 +128,12 @@ const initialValues = {
     contact_person_last_name: '',
     contact_person_email: '',
     contact_person_phone: '',
-    competition_name: '',
-    competition_image: '',
-    nation: '',
-    city: '',
-    pool_name: '',
-    start_date: '',
-    end_date: '',
-    superlive: ''
+    //competition_name: '',
+    //competition_image: '',
+    //nation: '',
+    //city: '',
+    //pool_name: '',
+    //start_date: '',
+    //end_date: '',
+    superlive: false
 };

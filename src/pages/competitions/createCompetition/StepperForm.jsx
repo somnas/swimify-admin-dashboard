@@ -26,7 +26,7 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
 
     const handleSubmit = async (values, actions) => {
         if (step.props.onSubmit) {
-            await step.props.onSubmit(values);
+            await step.props.onSubmit(values, actions);
         }
         if (isLastStep) {
             return onSubmit(values, actions);
@@ -38,7 +38,7 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
 
     return (
         <Formik
-            initialValues={{ snapshot }}
+            initialValues={snapshot}
             onSubmit={handleSubmit}
             validationSchema={step.props.validationSchema}
         >
@@ -53,11 +53,12 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
                                 <Step key={label}>
                                     <StepLabel>{label}</StepLabel>
                                 </Step>
-                            )
+                            );
                         })}
                     </Stepper>
 
                     {step}
+
                     <FormNavigation
                         isLastStep={isLastStep}
                         stepNumber={stepNumber}
