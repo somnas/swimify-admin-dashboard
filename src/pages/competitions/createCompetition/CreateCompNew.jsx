@@ -34,7 +34,7 @@ export default function CreateCompNew() {
             <DashboardNavbar />
             <MDBox mt={5} mb={9}>
                 <Grid container justifyContent='center'>
-                    <Grid item xs={12} lg={8}>
+                    <Grid item xs={12} lg={9}>
                         <MDBox mt={6} mb={8} textAlign='center'>
                             <MDBox mb={1}>
                                 <MDTypography variant='h3' fontWeight='bold'>
