@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Formik, Form, FormikConfig, FormikValues } from 'formik';
+import { Formik, Form } from 'formik';
 import FormNavigation from './FormNavigation';
 import { Stepper, Step, StepLabel } from '@mui/material';
 
@@ -25,12 +25,10 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
     };
 
     const handleSubmit = async (values, actions) => {
-        //console.log(values);
         if (step.props.onSubmit) {
             await step.props.onSubmit(values, actions);
         }
         if (isLastStep) {
-            console.log('submit last step');
             return onSubmit(values, actions);
         } else {
             actions.setTouched({});
@@ -45,7 +43,7 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
             validationSchema={step.props.validationSchema}
         >
             {(formik) => (
-                <Form>
+                <Form onSubmit={formik.handleSubmit}>
 
                     <Stepper activeStep={stepNumber} alternativeLabel>
                         {steps.map(currentStep => {

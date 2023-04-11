@@ -1,10 +1,9 @@
 import React from 'react';
 
-import { Button } from '@mui/material';
 import MDBox from 'components/MDBox';
 import MDButton from 'components/MDButton';
 
-export default function FormNavigation({ stepNumber, isLastStep, onBackClick, onNextClick }) {
+export default function FormNavigation({ stepNumber, isLastStep, onBackClick }) {
     return (
         <MDBox mt={3} width='100%' display='flex' justifyContent='space-between'>
             {stepNumber === 0 ? (
@@ -15,7 +14,7 @@ export default function FormNavigation({ stepNumber, isLastStep, onBackClick, on
                 </MDButton>
             )}
             {!isLastStep ?
-                <MDButton variant='gradient' color='dark' type='submit' onClick={onNextClick}>
+                <MDButton variant='gradient' color='dark' type='submit'>
                     next
                 </MDButton>
                 :
