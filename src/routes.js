@@ -57,7 +57,6 @@ import CompetitionList2 from 'pages/competitions/competitionList/CompetitionList
 import Files from 'pages/files/Files';
 import CreateCompetition from 'pages/competitions/createCompetition/CreateCompetition';
 import ProfileSettings from 'pages/profile/profileSettings/ProfileSettings';
-import CreateCompNew from 'pages/competitions/createCompetition/CreateCompNew';
 import ProfileOverview from "pages/profile/profileOverview/ProfileOverview";
 
 
@@ -151,7 +150,7 @@ const routes = [
         name: "Create Competition",
         key: "create-competition",
         route: "/competitions/create-competition",
-        component: <CreateCompNew />,
+        component: <CreateCompetition />,
       },
       /* {
         name: "Edit Competition",

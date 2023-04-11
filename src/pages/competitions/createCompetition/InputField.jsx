@@ -4,11 +4,11 @@ import { TextField, Grid } from '@mui/material';
 import { FieldConfig, useField } from 'formik';
 
 export default function InputField({ label, ...props }) {
-    
+
     const [field, meta] = useField(props);
 
     return (
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12} sm={6} sx={{ bgcolor: '' }}>
             <TextField
                 fullWidth
                 label={label}
