@@ -26,11 +26,14 @@ export default function StepperForm({ children, initialValues, onSubmit }) {
 
     const handleSubmit = async (values, actions) => {
         if (step.props.onSubmit) {
+            console.log('awaiting form step onSubmit');
             await step.props.onSubmit(values, actions);
         }
         if (isLastStep) {
+            console.log('submit last form step');
             return onSubmit(values, actions);
         } else {
+            console.log('set touched to empty object and trigger next form step');
             actions.setTouched({});
             nextStep(values);
         }
