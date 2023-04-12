@@ -17,8 +17,8 @@ import * as yup from 'yup';
 import StepperForm, { FormStep } from './StepperForm';
 import SwitchInput from './SwitchInput';
 import DatePickerInput from './DatePickerInput';
-import FileUpload from './FileUpload';
-import MDDropzone from 'components/MDDropzone';
+import DropZone from './DropZone';
+import ButtonInputFieldUpload from './ButtonInputFieldUpload';
 
 const validationSchema = yup.object({
     organizer_name: yup.string().required('Organizer name is required'),
@@ -65,12 +65,12 @@ export default function CreateCompetition() {
                                         >
                                             <Grid container item justifyContent='center' mt={3} spacing={3} sx={{ bgcolor: '' }}>
                                                 <InputField name='organizer_name' label='Organizer Name' />
-                                                <InputField name='organizer_logo' label='Organizer Logo' />
+                                                <ButtonInputFieldUpload name='organizer_logo' label='Organizer Logo' buttonText='Choose file' />
                                                 <InputField name='contact_person_first_name' label='Contact Person First Name' />
                                                 <InputField name='contact_person_last_name' label='Contact Person Last Name' />
                                                 <InputField name='contact_person_email' label='Contact Person Email' />
                                                 <InputField name='contact_person_phone' label='Contact Person Phone' />
-                                                <FileUpload />
+                                                <DropZone />
                                             </Grid>
                                         </FormStep>
                                         <FormStep

@@ -5,7 +5,7 @@ import { Grid, Box, Typography } from '@mui/material';
 import { useTheme } from '@mui/material/styles';
 import AddBoxIcon from '@mui/icons-material/AddBox';
 
-export default function FileUpload() {
+export default function DropZone() {
 
     const theme = useTheme();
     const textColor = theme.palette.lightText.main;
