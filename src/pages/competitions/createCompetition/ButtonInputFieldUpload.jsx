@@ -3,12 +3,12 @@ import React from 'react';
 import { TextField, Grid, Button, InputAdornment } from '@mui/material';
 import { FieldConfig, useField } from 'formik';
 
-export default function ButtonInputFieldUpload ({ label, buttonText, onClick, ...props }) {
+export default function ButtonInputFieldUpload({ label, buttonText, onClick, ...props }) {
 
     const [field, meta] = useField(props);
 
     return (
-        <Grid item xs={12} sm={6} sx={{ bgcolor: '' }}>
+        <Grid item xs={12} sm={6}>
             <TextField
                 fullWidth
                 label={label}
@@ -19,7 +19,10 @@ export default function ButtonInputFieldUpload ({ label, buttonText, onClick, ..
                 InputProps={{
                     endAdornment: (
                         <InputAdornment position='end'>
-                            <Button variant='grey' sx={{ fontSize: '0.6rem' }}>{buttonText}</Button>
+                            <Button variant='grey' component='label' sx={{ fontSize: '0.6rem' }}>
+                                <input hidden accept='image/*' multiple type='file' />
+                                {buttonText}
+                            </Button>
                         </InputAdornment>
                     ),
                 }}
