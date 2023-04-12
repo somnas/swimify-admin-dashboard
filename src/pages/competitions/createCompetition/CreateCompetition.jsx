@@ -18,6 +18,7 @@ import StepperForm, { FormStep } from './StepperForm';
 import SwitchInput from './SwitchInput';
 import DatePickerInput from './DatePickerInput';
 import FileUpload from './FileUpload';
+import MDDropzone from 'components/MDDropzone';
 
 const validationSchema = yup.object({
     organizer_name: yup.string().required('Organizer name is required'),
@@ -62,7 +63,6 @@ export default function CreateCompetition() {
                                             onSubmit={() => console.log('Step 1 submit')}
                                             validationSchema={validationSchema}
                                         >
-                                            {/* <MDBox mt={3}> */}
                                             <Grid container item justifyContent='center' mt={3} spacing={3} sx={{ bgcolor: '' }}>
                                                 <InputField name='organizer_name' label='Organizer Name' />
                                                 <InputField name='organizer_logo' label='Organizer Logo' />
@@ -72,13 +72,12 @@ export default function CreateCompetition() {
                                                 <InputField name='contact_person_phone' label='Contact Person Phone' />
                                                 <FileUpload />
                                             </Grid>
-                                            {/* </MDBox> */}
                                         </FormStep>
                                         <FormStep
                                             stepName='Competition'
                                             onSubmit={() => console.log('Step 2 submit')}
                                             validationSchema={yup.object({
-                                                //TODO: better date validation on start and end date
+                                                //TODO: do better date validation on start and end date
                                                 competition_name: yup.string().required('Competition name is required'),
                                                 competition_image: yup.string().url(),
                                                 nation: yup.string().required('Nation is required'),
@@ -89,18 +88,16 @@ export default function CreateCompetition() {
                                                 superlive: yup.boolean(),
                                             })}
                                         >
-                                            <MDBox mt={3}>
-                                                <Grid container spacing={3}>
-                                                    <InputField name='competition_name' label='Competition Name' />
-                                                    <InputField name='competition_image' label='Competition Image' />
-                                                    <InputField name='nation' label='Nation' />
-                                                    <InputField name='city' label='City' />
-                                                    <InputField name='pool_name' label='Pool Name' />
-                                                    <DatePickerInput name='start_date' label='Start Date' />
-                                                    <DatePickerInput name='end_date' label='End Date' />
-                                                    <SwitchInput name='superlive' label='Superlive' />
-                                                </Grid>
-                                            </MDBox>
+                                            <Grid container item justifyContent='center' mt={3} spacing={3}>
+                                                <InputField name='competition_name' label='Competition Name' />
+                                                <InputField name='competition_image' label='Competition Image' />
+                                                <InputField name='nation' label='Nation' />
+                                                <InputField name='city' label='City' />
+                                                <InputField name='pool_name' label='Pool Name' />
+                                                <DatePickerInput name='start_date' label='Start Date' />
+                                                <DatePickerInput name='end_date' label='End Date' />
+                                                <SwitchInput name='superlive' label='Superlive' />
+                                            </Grid>
                                         </FormStep>
                                     </StepperForm>
                                 </MDBox>
