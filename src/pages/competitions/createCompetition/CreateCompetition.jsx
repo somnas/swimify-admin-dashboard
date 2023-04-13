@@ -22,7 +22,7 @@ import ButtonInputFieldUpload from './ButtonInputFieldUpload';
 
 const validationSchema = yup.object({
     organizer_name: yup.string().required('Organizer name is required'),
-    organizer_logo: yup.string(),
+    organizer_logo: yup.string().url(),
     contact_person_first_name: yup.string().required('First name is required'),
     contact_person_last_name: yup.string().required('Last name is required'),
     contact_person_email: yup.string().email().required('Email is required'),
