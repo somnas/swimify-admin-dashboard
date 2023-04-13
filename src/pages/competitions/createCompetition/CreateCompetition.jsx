@@ -34,7 +34,8 @@ const validationSchema = yup.object({
 export default function CreateCompetition() {
 
     const { user, signOut } = useAuthenticator((context) => [context.user]);
-    console.log(user);
+    //console.log(user);
+
     return (
         <DashboardLayout>
             <DashboardNavbar />
