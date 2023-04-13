@@ -53,8 +53,8 @@ import EditCompetition from 'pages/competitions/editCompetition/EditCompetition'
 const getUser = async () => {
   const session = await Auth.currentSession();
   const cognitoUser = await Auth.currentAuthenticatedUser();
-  console.log(session);
-  console.log(cognitoUser);
+  //console.log(session);
+  //console.log(cognitoUser);
 };
 
 export default function App() {

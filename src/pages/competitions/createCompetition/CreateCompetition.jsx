@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import { useAuthenticator } from '@aws-amplify/ui-react';
+
 import DashboardLayout from 'layouts/containers/DashboardLayout';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
 import Footer from 'layouts/components/Footer';
@@ -31,6 +33,8 @@ const validationSchema = yup.object({
 
 export default function CreateCompetition() {
 
+    const { user, signOut } = useAuthenticator((context) => [context.user]);
+    console.log(user);
     return (
         <DashboardLayout>
             <DashboardNavbar />
