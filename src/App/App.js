@@ -1,51 +1,66 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useMemo } from 'react';
+
+import { Authenticator } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
+import { Auth } from 'aws-amplify';
 
 // react-router components
-import { Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 
 // @mui material components
-import { ThemeProvider } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import Icon from "@mui/material/Icon";
+import { ThemeProvider } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import Icon from '@mui/material/Icon';
 import { LocalizationProvider } from '@mui/x-date-pickers';
 import { AdapterDateFns } from '@mui/x-date-pickers/AdapterDateFns';
 
 // Material Dashboard 2 PRO React components
-import MDBox from "components/MDBox";
+import MDBox from 'components/MDBox';
 
 // Material Dashboard 2 PRO React examples
-import Sidenav from "layouts/sidenav";
-//import Sidenav from "examples/Sidenav";
-import Configurator from "examples/Configurator";
+import Sidenav from 'layouts/sidenav';
+//import Sidenav from 'examples/Sidenav';
+import Configurator from 'examples/Configurator';
 
 // Material Dashboard 2 PRO React themes
-import theme from "assets/theme";
-import themeRTL from "assets/theme/theme-rtl";
+import theme from 'assets/theme';
+import themeRTL from 'assets/theme/theme-rtl';
 
 // Material Dashboard 2 PRO React Dark Mode themes
-import themeDark from "assets/theme-dark";
-import themeDarkRTL from "assets/theme-dark/theme-rtl";
+import themeDark from 'assets/theme-dark';
+import themeDarkRTL from 'assets/theme-dark/theme-rtl';
 
 // RTL plugins
-import rtlPlugin from "stylis-plugin-rtl";
-import { CacheProvider } from "@emotion/react";
-import createCache from "@emotion/cache";
+import rtlPlugin from 'stylis-plugin-rtl';
+import { CacheProvider } from '@emotion/react';
+import createCache from '@emotion/cache';
 
 // Material Dashboard 2 PRO React routes
-import routes from "routes";
+import routes from 'routes';
 
 // Material Dashboard 2 PRO React contexts
-import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from "context";
+import { useMaterialUIController, setMiniSidenav, setOpenConfigurator } from 'context';
 
 // Images
-import brandWhite from "assets/images/logo-swimify.png";
-import brandDark from "assets/images/logo-swimify.png";
+import brandWhite from 'assets/images/logo-swimify.png';
+import brandDark from 'assets/images/logo-swimify.png';
 
 // Pages
 import CompetitionDetails from 'pages/competitions/competitionDetails/CompetitionDetails';
 import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
 
+const getUser = async () => {
+  const session = await Auth.currentSession();
+  const cognitoUser = await Auth.currentAuthenticatedUser();
+  console.log(session);
+  console.log(cognitoUser);
+};
+
 export default function App() {
+
+  getUser();
+
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
@@ -64,7 +79,7 @@ export default function App() {
   // Cache for the rtl
   useMemo(() => {
     const cacheRtl = createCache({
-      key: "rtl",
+      key: 'rtl',
       stylisPlugins: [rtlPlugin],
     });
 
@@ -92,7 +107,7 @@ export default function App() {
 
   // Setting the dir attribute for the body element
   useEffect(() => {
-    document.body.setAttribute("dir", direction);
+    document.body.setAttribute('dir', direction);
   }, [direction]);
 
   // Setting page scroll to 0 when changing the route
@@ -116,54 +131,58 @@ export default function App() {
 
   const configsButton = (
     <MDBox
-      display="flex"
-      justifyContent="center"
-      alignItems="center"
-      width="3.25rem"
-      height="3.25rem"
-      bgColor="white"
-      shadow="sm"
-      borderRadius="50%"
-      position="fixed"
-      right="2rem"
-      bottom="2rem"
+      display='flex'
+      justifyContent='center'
+      alignItems='center'
+      width='3.25rem'
+      height='3.25rem'
+      bgColor='white'
+      shadow='sm'
+      borderRadius='50%'
+      position='fixed'
+      right='2rem'
+      bottom='2rem'
       zIndex={99}
-      color="dark"
-      sx={{ cursor: "pointer" }}
+      color='dark'
+      sx={{ cursor: 'pointer' }}
       onClick={handleConfiguratorOpen}
     >
-      <Icon fontSize="small" color="inherit">
+      <Icon fontSize='small' color='inherit'>
         settings
       </Icon>
     </MDBox>
   );
 
+
+
   return (
-    <LocalizationProvider dateAdapter={AdapterDateFns}>
-      <ThemeProvider theme={darkMode ? themeDark : theme}>
-        <CssBaseline />
-        {layout === "dashboard" && (
-          <>
-            <Sidenav
-              color={sidenavColor}
-              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-              brandName="Swimify Admin"
-              routes={routes}
-              onMouseEnter={handleOnMouseEnter}
-              onMouseLeave={handleOnMouseLeave}
-            />
-            {/* <Configurator />
+    <Authenticator.Provider>
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <ThemeProvider theme={darkMode ? themeDark : theme}>
+          <CssBaseline />
+          {layout === 'dashboard' && (
+            <>
+              <Sidenav
+                color={sidenavColor}
+                brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+                brandName='Swimify Admin'
+                routes={routes}
+                onMouseEnter={handleOnMouseEnter}
+                onMouseLeave={handleOnMouseLeave}
+              />
+              {/* <Configurator />
           {configsButton} */}
-          </>
-        )}
-        {/* {layout === "vr" && <Configurator />} */}
-        <Routes>
-          {getRoutes(routes)}
-          <Route path="/competition/:competitionId" element={<CompetitionDetails />} />
-          <Route path="/competition/:competitionId/edit" element={<EditCompetition />} />
-          <Route path="*" element={<Navigate to="/dashboard" />} />
-        </Routes>
-      </ThemeProvider>
-    </LocalizationProvider>
+            </>
+          )}
+          {/* {layout === 'vr' && <Configurator />} */}
+          <Routes>
+            {getRoutes(routes)}
+            <Route path='/competition/:competitionId' element={<CompetitionDetails />} />
+            <Route path='/competition/:competitionId/edit' element={<EditCompetition />} />
+            <Route path='*' element={<Navigate to='/dashboard' />} />
+          </Routes>
+        </ThemeProvider>
+      </LocalizationProvider>
+    </Authenticator.Provider>
   );
 }

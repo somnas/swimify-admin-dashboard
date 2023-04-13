@@ -1,0 +1,15 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-swimifydashboard-dev-105633-authRole",
+      "UnauthRoleArn": "arn:aws:iam::790768974657:role/amplify-swimifydashboard-dev-105633-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::790768974657:role/amplify-swimifydashboard-dev-105633-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-swimifydashboard-dev-105633-deployment",
+      "UnauthRoleName": "amplify-swimifydashboard-dev-105633-unauthRole",
+      "StackName": "amplify-swimifydashboard-dev-105633",
+      "StackId": "arn:aws:cloudformation:eu-north-1:790768974657:stack/amplify-swimifydashboard-dev-105633/178cfdc0-d9d9-11ed-8281-0635e2c8ee92",
+      "AmplifyAppId": "d2c494pchs73gi"
+    }
+  }
+}
