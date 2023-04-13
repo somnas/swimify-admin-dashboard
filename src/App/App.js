@@ -170,11 +170,8 @@ export default function App() {
                 onMouseEnter={handleOnMouseEnter}
                 onMouseLeave={handleOnMouseLeave}
               />
-              {/* <Configurator />
-          {configsButton} */}
             </>
           )}
-          {/* {layout === 'vr' && <Configurator />} */}
           <Routes>
             {getRoutes(routes)}
             <Route path='/competition/:competitionId' element={<CompetitionDetails />} />

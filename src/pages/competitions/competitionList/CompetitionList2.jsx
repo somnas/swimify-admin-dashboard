@@ -5,11 +5,14 @@ import Card from '@mui/material/Card';
 import MDBox from 'components/MDBox';
 import MDTypography from 'components/MDTypography';
 import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
+import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
+import Footer from 'layouts/components/Footer';
 
 export default function CompetitionList2() {
 
     return (
         <DashboardLayout>
+            <DashboardNavbar />
             <MDBox pt={6} pb={3}>
                 <Card>
                     <MDBox p={3} lineHeight={1}>
@@ -25,6 +28,7 @@ export default function CompetitionList2() {
                     ))}
                 </Card>
             </MDBox>
+            <Footer />
         </DashboardLayout>
     );
 }
