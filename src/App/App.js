@@ -156,7 +156,7 @@ export default function App() {
 
 
   return (
-    <Authenticator.Provider>
+    <Authenticator>
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeProvider theme={darkMode ? themeDark : theme}>
           <CssBaseline />
@@ -180,6 +180,6 @@ export default function App() {
           </Routes>
         </ThemeProvider>
       </LocalizationProvider>
-    </Authenticator.Provider>
+    </Authenticator>
   );
 }

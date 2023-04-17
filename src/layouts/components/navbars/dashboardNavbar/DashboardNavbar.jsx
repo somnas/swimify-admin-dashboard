@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-import { useAuthenticator } from '@aws-amplify/ui-react';
+//import { useAuthenticator } from '@aws-amplify/ui-react';
+import { Auth } from 'aws-amplify';
 
 // react-router components
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 
 // prop-types is a library for typechecking of props.
 import PropTypes from 'prop-types';
@@ -45,9 +46,9 @@ import {
 
 export default function DashboardNavbar({ absolute, light, isMini, title }) {
 
-    const { user, signOut } = useAuthenticator((context) => [context.user]);
+    //const { user, signOut } = useAuthenticator((context) => [context.user]);
 
-    console.log(user);
+    const navigate = useNavigate();
 
     const [navbarType, setNavbarType] = useState();
     const [controller, dispatch] = useMaterialUIController();
@@ -118,6 +119,11 @@ export default function DashboardNavbar({ absolute, light, isMini, title }) {
         },
     });
 
+    const handleSignOut = async () => {
+        await Auth.signOut();
+        //navigate('/authentication/sign-in');
+    };
+
     return (
         <AppBar
             position={absolute ? 'absolute' : navbarType}
@@ -146,8 +152,8 @@ export default function DashboardNavbar({ absolute, light, isMini, title }) {
                                 </Icon>
                             </IconButton>
 
-                            {/* <Link to='/authentication/sign-in/basic'> */}
-                            <IconButton sx={navbarIconButton} size='small' disableRipple onClick={() => signOut()}>
+                            {/* <Link to='/authentication/sign-in'> */}
+                            <IconButton sx={navbarIconButton} size='small' disableRipple onClick={() => handleSignOut()}>
                                 {/* <Icon sx={iconsStyle}>account_circle</Icon> */}
                                 <LogoutIcon />
                             </IconButton>
