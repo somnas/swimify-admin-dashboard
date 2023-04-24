@@ -103,7 +103,7 @@ export default function SignIn() {
 							</MDTypography>
 						</MDBox>
 						<MDBox mt={4} mb={1}>
-							<MDButton variant='gradient' color={loading ? 'info' : 'dark'} fullWidth onClick={() => signIn(email, password)}>
+							<MDButton variant='gradient' disabled={loading} color={'dark'} fullWidth onClick={() => signIn(email, password)}>
 								sign in
 							</MDButton>
 						</MDBox>
