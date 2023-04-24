@@ -7,6 +7,9 @@ import App from './App/App';
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
 
+import { AmplifyProvider } from '@aws-amplify/ui-react';
+import '@aws-amplify/ui-react/styles.css';
+
 // Context Provider
 import { MaterialUIControllerProvider } from 'context';
 
@@ -20,9 +23,11 @@ Amplify.configure({
 
 ReactDOM.render(
   <BrowserRouter>
-    <MaterialUIControllerProvider>
-      <App />
-    </MaterialUIControllerProvider>
+    <AmplifyProvider>
+      <MaterialUIControllerProvider>
+        <App />
+      </MaterialUIControllerProvider>
+    </AmplifyProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );

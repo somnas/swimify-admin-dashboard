@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
 import { Authenticator } from '@aws-amplify/ui-react';
-import '@aws-amplify/ui-react/styles.css';
+//import '@aws-amplify/ui-react/styles.css';
 
 import { Auth } from 'aws-amplify';
 
@@ -156,7 +156,8 @@ export default function App() {
 
 
   return (
-    <Authenticator>
+    <>
+      {/* <Authenticator> */}
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeProvider theme={darkMode ? themeDark : theme}>
           <CssBaseline />
@@ -180,6 +181,7 @@ export default function App() {
           </Routes>
         </ThemeProvider>
       </LocalizationProvider>
-    </Authenticator>
+      {/* </Authenticator> */}
+    </>
   );
 }
