@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-//import { useAuthenticator } from '@aws-amplify/ui-react';
-import { Auth } from 'aws-amplify';
-
 // react-router components
 import { useLocation, Link, useNavigate } from 'react-router-dom';
+
+//import { useAuthenticator } from '@aws-amplify/ui-react';
+import { Auth } from 'aws-amplify';
 
 // prop-types is a library for typechecking of props.
 import PropTypes from 'prop-types';
@@ -121,7 +121,7 @@ export default function DashboardNavbar({ absolute, light, isMini, title }) {
 
     const handleSignOut = async () => {
         await Auth.signOut();
-        //navigate('/authentication/sign-in');
+        navigate('/authentication/sign-in');
     };
 
     return (

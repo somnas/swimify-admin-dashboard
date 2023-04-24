@@ -40,7 +40,7 @@ export default function SignIn() {
 		try {
 			setLoading(true);
 			const user = await Auth.signIn(email, password);
-			console.log(user);
+			//console.log(user);
 			navigate('/dashboard');
 		} catch (error) {
 			setLoading(false);
