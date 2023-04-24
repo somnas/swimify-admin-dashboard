@@ -1,4 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+
+import { Auth } from 'aws-amplify';
 
 // react-router-dom components
 import { Link } from 'react-router-dom';
@@ -27,11 +30,23 @@ import bgImage from 'assets/images/swimmer_1280.jpg';
 
 export default function SignIn() {
 
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
+	const [email, setEmail] = useState(process.env.REACT_APP_USER_EMAIL);
+	const [password, setPassword] = useState(process.env.REACT_APP_USER_PW);
+	const [loading, setLoading] = useState(false);
 
-	console.log(email);
-	console.log(password);
+	const navigate = useNavigate();
+
+	async function signIn() {
+		try {
+			setLoading(true);
+			const user = await Auth.signIn(email, password);
+			console.log(user);
+			navigate('/dashboard');
+		} catch (error) {
+			setLoading(false);
+			console.log('error signing in', error);
+		}
+	}
 
 	const [rememberMe, setRememberMe] = useState(false);
 
@@ -70,10 +85,10 @@ export default function SignIn() {
 				<MDBox pt={4} pb={3} px={3}>
 					<MDBox component='form' role='form'>
 						<MDBox mb={2}>
-							<MDInput type='email' label='Email' fullWidth onChange={(e) => setEmail(e.target.value)} />
+							<MDInput type='email' label='Email' fullWidth onChange={(e) => setEmail(e.target.value)} value={email} />
 						</MDBox>
 						<MDBox mb={2}>
-							<MDInput type='password' label='Password' fullWidth onChange={(e) => setPassword(e.target.value)} />
+							<MDInput type='password' label='Password' fullWidth onChange={(e) => setPassword(e.target.value)} value={password} />
 						</MDBox>
 						<MDBox display='flex' alignItems='center' ml={-1}>
 							<Switch checked={rememberMe} onChange={handleSetRememberMe} />
@@ -88,7 +103,7 @@ export default function SignIn() {
 							</MDTypography>
 						</MDBox>
 						<MDBox mt={4} mb={1}>
-							<MDButton variant='gradient' color='dark' fullWidth>
+							<MDButton variant='gradient' color={loading ? 'info' : 'dark'} fullWidth onClick={() => signIn(email, password)}>
 								sign in
 							</MDButton>
 						</MDBox>
