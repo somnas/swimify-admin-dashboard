@@ -1,12 +1,11 @@
 import React, { useState, useEffect, useMemo } from 'react';
 
-import { Authenticator } from '@aws-amplify/ui-react';
-//import '@aws-amplify/ui-react/styles.css';
-
-import { Auth } from 'aws-amplify';
-
 // react-router components
 import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
+
+import { Auth } from 'aws-amplify';
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react';
+//import '@aws-amplify/ui-react/styles.css';
 
 // @mui material components
 import { ThemeProvider } from '@mui/material/styles';
@@ -49,17 +48,9 @@ import brandDark from 'assets/images/logo-swimify.png';
 // Pages
 import CompetitionDetails from 'pages/competitions/competitionDetails/CompetitionDetails';
 import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
-
-const getUser = async () => {
-  const session = await Auth.currentSession();
-  const cognitoUser = await Auth.currentAuthenticatedUser();
-  console.log(session);
-  console.log(cognitoUser);
-};
+import RequireAuth from './RequireAuth';
 
 export default function App() {
-
-  getUser();
 
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -153,16 +144,13 @@ export default function App() {
     </MDBox>
   );
 
-
-
   return (
     <>
-      {/* <Authenticator> */}
-      <LocalizationProvider dateAdapter={AdapterDateFns}>
-        <ThemeProvider theme={darkMode ? themeDark : theme}>
-          <CssBaseline />
-          {layout === 'dashboard' && (
-            <>
+      <Authenticator.Provider>
+        <LocalizationProvider dateAdapter={AdapterDateFns}>
+          <ThemeProvider theme={darkMode ? themeDark : theme}>
+            <CssBaseline />
+            {layout === 'dashboard' && (
               <Sidenav
                 color={sidenavColor}
                 brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
@@ -171,17 +159,24 @@ export default function App() {
                 onMouseEnter={handleOnMouseEnter}
                 onMouseLeave={handleOnMouseLeave}
               />
-            </>
-          )}
-          <Routes>
-            {getRoutes(routes)}
-            <Route path='/competition/:competitionId' element={<CompetitionDetails />} />
-            <Route path='/competition/:competitionId/edit' element={<EditCompetition />} />
-            <Route path='*' element={<Navigate to='/dashboard' />} />
-          </Routes>
-        </ThemeProvider>
-      </LocalizationProvider>
-      {/* </Authenticator> */}
+            )}
+            <Routes>
+              {getRoutes(routes)}
+              <Route path='/competition/:competitionId' element={
+                <RequireAuth>
+                  <CompetitionDetails />
+                </RequireAuth>
+              } />
+              <Route path='/competition/:competitionId/edit' element={
+                <RequireAuth>
+                  <EditCompetition />
+                </RequireAuth>
+              } />
+              <Route path='*' element={<Navigate to='/dashboard' />} />
+            </Routes>
+          </ThemeProvider>
+        </LocalizationProvider>
+      </Authenticator.Provider>
     </>
   );
 }

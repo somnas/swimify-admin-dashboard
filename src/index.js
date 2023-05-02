@@ -23,11 +23,9 @@ Amplify.configure({
 
 ReactDOM.render(
   <BrowserRouter>
-    <AmplifyProvider>
-      <MaterialUIControllerProvider>
-        <App />
-      </MaterialUIControllerProvider>
-    </AmplifyProvider>
+    <MaterialUIControllerProvider>
+      <App />
+    </MaterialUIControllerProvider>
   </BrowserRouter>,
   document.getElementById('root')
 );
