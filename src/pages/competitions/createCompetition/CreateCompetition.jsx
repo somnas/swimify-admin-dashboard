@@ -37,8 +37,9 @@ export default function CreateCompetition() {
     //console.log(user);
 
     return (
-        <DashboardLayout>
-            <DashboardNavbar />
+        <>
+            {/* <DashboardLayout> */}
+            {/* <DashboardNavbar /> */}
             <MDBox mt={5} mb={9}>
                 <Grid container justifyContent='center'>
                     <Grid item xs={12} lg={9}>
@@ -111,8 +112,9 @@ export default function CreateCompetition() {
                     </Grid>
                 </Grid>
             </MDBox>
-            <Footer />
-        </DashboardLayout>
+            {/* <Footer /> */}
+            {/* </DashboardLayout> */}
+        </>
     );
 }
 

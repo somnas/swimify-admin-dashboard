@@ -24,8 +24,9 @@ export default function EditCompetition() {
     const competitionName = 'SM Linköping 2022';
 
     return (
-        <DashboardLayout>
-            <DashboardNavbar title={competitionName} />
+        <>
+            {/* <DashboardLayout> */}
+            {/* <DashboardNavbar title={competitionName} /> */}
             <MDBox mt={4}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} lg={3}>
@@ -80,7 +81,8 @@ export default function EditCompetition() {
                     </Grid>
                 </Grid>
             </MDBox>
-            < Footer />
-        </DashboardLayout >
+            {/* <Footer /> */}
+            {/* </DashboardLayout> */}
+        </>
     );
 }

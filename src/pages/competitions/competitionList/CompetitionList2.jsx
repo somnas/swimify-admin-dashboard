@@ -11,8 +11,9 @@ import Footer from 'layouts/components/Footer';
 export default function CompetitionList2() {
 
     return (
-        <DashboardLayout>
-            <DashboardNavbar />
+        <>
+            {/* <DashboardLayout> */}
+            {/* <DashboardNavbar /> */}
             <MDBox pt={6} pb={3}>
                 <Card>
                     <MDBox p={3} lineHeight={1}>
@@ -28,8 +29,9 @@ export default function CompetitionList2() {
                     ))}
                 </Card>
             </MDBox>
-            <Footer />
-        </DashboardLayout>
+            {/* <Footer /> */}
+            {/* </DashboardLayout> */}
+        </>
     );
 }
 

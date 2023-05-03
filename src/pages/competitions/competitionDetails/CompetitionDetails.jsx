@@ -31,8 +31,9 @@ export default function CompetitionDetails() {
     const competitionName = 'SM Linköping 2022';
 
     return (
-        <DashboardLayout>
-            <DashboardNavbar title={competitionName} />
+        <>
+            {/* <DashboardLayout> */}
+            {/* <DashboardNavbar title={competitionName} /> */}
             <MDBox py={3}>
                 <Card sx={{}}>
                     <MDBox p={3}>
@@ -70,8 +71,9 @@ export default function CompetitionDetails() {
                     </MDBox>
                 </Card>
             </MDBox>
-            <Footer />
-        </DashboardLayout>
+            {/* <Footer /> */}
+            {/* </DashboardLayout> */}
+        </>
     );
 }
 

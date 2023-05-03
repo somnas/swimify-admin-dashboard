@@ -56,8 +56,9 @@ export default function Dashboard() {
     );
 
     return (
-        <DashboardLayout>
-            <DashboardNavbar />
+        <>
+            {/* <DashboardLayout> */}
+            {/* <DashboardNavbar /> */}
             <MDBox py={3}>
                 <Grid container>
                     <SalesByCountry />
@@ -167,7 +168,8 @@ export default function Dashboard() {
                     </Grid>
                 </MDBox>
             </MDBox>
-            <Footer />
-        </DashboardLayout>
+            {/* <Footer /> */}
+            {/* </DashboardLayout> */}
+        </>
     );
 }

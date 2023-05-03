@@ -49,6 +49,7 @@ import brandDark from 'assets/images/logo-swimify.png';
 import CompetitionDetails from 'pages/competitions/competitionDetails/CompetitionDetails';
 import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
 import RequireAuth from './RequireAuth';
+import DashboardLayout from 'layouts/containers/DashboardLayout';
 
 function AppRoutes() {
 
@@ -165,20 +166,22 @@ function AppRoutes() {
               onMouseLeave={handleOnMouseLeave}
             />
           )}
-          <Routes>
-            {getRoutes(routes)}
-            <Route path='/competition/:competitionId' element={
-              <RequireAuth>
-                <CompetitionDetails />
-              </RequireAuth>
-            } />
-            <Route path='/competition/:competitionId/edit' element={
-              <RequireAuth>
-                <EditCompetition />
-              </RequireAuth>
-            } />
-            <Route path='*' element={<Navigate to='/dashboard' />} />
-          </Routes>
+          <DashboardLayout>
+            <Routes>
+              {getRoutes(routes)}
+              <Route path='/competition/:competitionId' element={
+                <RequireAuth>
+                  <CompetitionDetails />
+                </RequireAuth>
+              } />
+              <Route path='/competition/:competitionId/edit' element={
+                <RequireAuth>
+                  <EditCompetition />
+                </RequireAuth>
+              } />
+              <Route path='*' element={<Navigate to='/dashboard' />} />
+            </Routes>
+          </DashboardLayout>
         </ThemeProvider>
       </LocalizationProvider>
 
