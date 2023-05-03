@@ -50,6 +50,7 @@ import CompetitionDetails from 'pages/competitions/competitionDetails/Competitio
 import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
 import RequireAuth from './RequireAuth';
 import DashboardLayout from 'layouts/containers/DashboardLayout';
+import SignIn from 'pages/authentication/signIn/SignIn';
 
 function AppRoutes() {
 
@@ -152,7 +153,6 @@ function AppRoutes() {
 
   return (
     <>
-
       <LocalizationProvider dateAdapter={AdapterDateFns}>
         <ThemeProvider theme={darkMode ? themeDark : theme}>
           <CssBaseline />
@@ -166,8 +166,8 @@ function AppRoutes() {
               onMouseLeave={handleOnMouseLeave}
             />
           )}
-          <DashboardLayout>
-            <Routes>
+          <Routes>
+            <Route path='/' element={<DashboardLayout />}>
               {getRoutes(routes)}
               <Route path='/competition/:competitionId' element={
                 <RequireAuth>
@@ -179,12 +179,12 @@ function AppRoutes() {
                   <EditCompetition />
                 </RequireAuth>
               } />
-              <Route path='*' element={<Navigate to='/dashboard' />} />
-            </Routes>
-          </DashboardLayout>
+            </Route>
+            <Route path='/authentication/sign-in' element={<SignIn />} />
+            <Route path='*' element={<Navigate to='/dashboard' />} />
+          </Routes>
         </ThemeProvider>
       </LocalizationProvider>
-
     </>
   );
 }

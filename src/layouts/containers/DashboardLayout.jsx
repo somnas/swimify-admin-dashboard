@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 
 // react-router-dom components
-import { useLocation } from 'react-router-dom';
+import { useLocation, Outlet } from 'react-router-dom';
 
 // prop-types is a library for typechecking of props.
 import PropTypes from 'prop-types';
@@ -14,7 +14,7 @@ import { useMaterialUIController, setLayout } from 'context';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
 import Footer from 'layouts/components/Footer';
 
-export default function DashboardLayout({ children }) {
+export default function DashboardLayout(/* { children } */) {
 
     const competitionName = 'SM Linköping 2022';
 
@@ -44,14 +44,10 @@ export default function DashboardLayout({ children }) {
         >
             <MDBox sx={{ paddingBottom: '2.5rem' }}>
                 <DashboardNavbar title={competitionName} />
-                {children}
+                {/* {children} */}
+                <Outlet />
             </MDBox>
             <Footer />
         </MDBox>
     );
 }
-
-// Typechecking props for the DashboardLayout
-DashboardLayout.propTypes = {
-    children: PropTypes.node.isRequired,
-};
