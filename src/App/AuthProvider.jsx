@@ -20,7 +20,7 @@ export const AuthProvider = ({ children }) => {
         fetchUser();
       }, []);
 
-    console.log(user);
+    //console.log(user);
 
     // call this function when you want to authenticate the user
     const login = async (data) => {

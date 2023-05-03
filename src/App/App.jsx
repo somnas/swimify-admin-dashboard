@@ -50,7 +50,12 @@ import CompetitionDetails from 'pages/competitions/competitionDetails/Competitio
 import EditCompetition from 'pages/competitions/editCompetition/EditCompetition';
 import RequireAuth from './RequireAuth';
 
-export default function App() {
+function AppRoutes() {
+
+  //const { user } = useAuthenticator((context) => [context.user]);
+  //const auth = useAuthenticator();
+  //console.log(auth);
+  //console.log(user);
 
   const [controller, dispatch] = useMaterialUIController();
   const {
@@ -146,37 +151,47 @@ export default function App() {
 
   return (
     <>
-      <Authenticator.Provider>
-        <LocalizationProvider dateAdapter={AdapterDateFns}>
-          <ThemeProvider theme={darkMode ? themeDark : theme}>
-            <CssBaseline />
-            {layout === 'dashboard' && (
-              <Sidenav
-                color={sidenavColor}
-                brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
-                brandName='Swimify Admin'
-                routes={routes}
-                onMouseEnter={handleOnMouseEnter}
-                onMouseLeave={handleOnMouseLeave}
-              />
-            )}
-            <Routes>
-              {getRoutes(routes)}
-              <Route path='/competition/:competitionId' element={
-                <RequireAuth>
-                  <CompetitionDetails />
-                </RequireAuth>
-              } />
-              <Route path='/competition/:competitionId/edit' element={
-                <RequireAuth>
-                  <EditCompetition />
-                </RequireAuth>
-              } />
-              <Route path='*' element={<Navigate to='/dashboard' />} />
-            </Routes>
-          </ThemeProvider>
-        </LocalizationProvider>
-      </Authenticator.Provider>
+
+      <LocalizationProvider dateAdapter={AdapterDateFns}>
+        <ThemeProvider theme={darkMode ? themeDark : theme}>
+          <CssBaseline />
+          {layout === 'dashboard' && (
+            <Sidenav
+              color={sidenavColor}
+              brand={(transparentSidenav && !darkMode) || whiteSidenav ? brandDark : brandWhite}
+              brandName='Swimify Admin'
+              routes={routes}
+              onMouseEnter={handleOnMouseEnter}
+              onMouseLeave={handleOnMouseLeave}
+            />
+          )}
+          <Routes>
+            {getRoutes(routes)}
+            <Route path='/competition/:competitionId' element={
+              <RequireAuth>
+                <CompetitionDetails />
+              </RequireAuth>
+            } />
+            <Route path='/competition/:competitionId/edit' element={
+              <RequireAuth>
+                <EditCompetition />
+              </RequireAuth>
+            } />
+            <Route path='*' element={<Navigate to='/dashboard' />} />
+          </Routes>
+        </ThemeProvider>
+      </LocalizationProvider>
+
     </>
   );
 }
+
+function App() {
+  return (
+    <Authenticator.Provider>
+      <AppRoutes />
+    </Authenticator.Provider>
+  );
+}
+
+export default App;
