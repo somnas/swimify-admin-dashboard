@@ -1,21 +1,31 @@
-import React from 'react';
-
+import React, { useState } from 'react';
 import { useLocation, Navigate } from 'react-router-dom';
-import { useAuthenticator } from '@aws-amplify/ui-react';
+
+import { Auth } from 'aws-amplify';
+
 import Loader from 'layouts/components/Loader';
 
 export default function RequireAuth({ children }) {
 
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
+
     const location = useLocation();
-    //const { route } = useAuthenticator((context) => [context.route]);
-    const { authStatus } = useAuthenticator((context) => [context.authStatus]);
 
-    //console.log(route);
-    //console.log(authStatus);
+    const checkUser = async () => {
+        try {
+            await Auth.currentSession();
+            setLoading(false);
+        } catch {
+            setLoading(false);
+            setError(true);
+        }
+    };
+    checkUser();
 
-    if (authStatus === 'configuring') return <Loader />;
-    if (authStatus === 'unauthenticated') return <Navigate to='/authentication/sign-in' state={{ from: location }} replace />;
+    if (loading) return <Loader />;
+    if (error) return <Navigate to='/authentication/sign-in' state={{ from: location }} replace />;
 
-    if (authStatus === 'authenticated') return children;
+    return children;
 
 }

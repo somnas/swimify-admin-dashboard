@@ -54,11 +54,6 @@ import SignIn from 'pages/authentication/signIn/SignIn';
 
 function AppRoutes() {
 
-  //const { user } = useAuthenticator((context) => [context.user]);
-  //const auth = useAuthenticator();
-  //console.log(auth);
-  //console.log(user);
-
   const [controller, dispatch] = useMaterialUIController();
   const {
     miniSidenav,
