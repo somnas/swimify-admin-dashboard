@@ -10,6 +10,7 @@
     "npm": ">=6"
   },
   "dependencies": {
+    "@apollo/client": "^3.7.14",
     "@asseinfo/react-kanban": "2.2.0",
     "@aws-amplify/ui-react": "^4.6.0",
     "@emotion/cache": "11.7.1",
@@ -35,6 +36,7 @@
     "dropzone": "^6.0.0-beta.2",
     "flatpickr": "4.6.9",
     "formik": "^2.2.9",
+    "graphql": "^16.6.0",
     "html-react-parser": "1.4.8",
     "prop-types": "15.8.1",
     "react": "^17.0.2",

@@ -2,7 +2,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './App/App';
+import { ApolloClient, InMemoryCache, ApolloProvider } from '@apollo/client';
+
+import App from './app/App';
 
 import { Amplify } from 'aws-amplify';
 import awsExports from './aws-exports';
@@ -12,6 +14,8 @@ import '@aws-amplify/ui-react/styles.css';
 
 // Context Provider
 import { MaterialUIControllerProvider } from 'context';
+
+import client from 'utils/apollo/apollo-client';
 
 Amplify.configure({
   Auth: {
@@ -24,7 +28,9 @@ Amplify.configure({
 ReactDOM.render(
   <BrowserRouter>
     <MaterialUIControllerProvider>
-      <App />
+      <ApolloProvider client={client}>
+        <App />
+      </ApolloProvider>
     </MaterialUIControllerProvider>
   </BrowserRouter>,
   document.getElementById('root')

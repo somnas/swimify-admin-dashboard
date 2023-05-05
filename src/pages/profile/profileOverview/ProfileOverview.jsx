@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useQuery } from '@apollo/client';
+
 // @mui material components
 import Grid from '@mui/material/Grid';
 import Divider from '@mui/material/Divider';
@@ -11,8 +13,24 @@ import MDBox from 'components/MDBox';
 import Header from './components/header/Header';
 import OrganizerInfo from './components/organizerInfo/OrganizerInfo';
 import ProfileInfo from './components/profileInfo/ProfileInfo';
+import { GET_COMPETITIONS, GET_USERS } from 'utils/graphql/queries';
 
 export default function ProfileOverview() {
+
+	const { loading, error, data } = useQuery(GET_COMPETITIONS, {
+		onCompleted: data => {
+			console.log(data);
+		}
+	});
+
+	/* const { loading, error, data } = useQuery(GET_USERS, {
+		onCompleted: data => {
+			console.log(data);
+		}
+	}); */
+
+	console.log(data);
+
 	return (
 		<>
 			<MDBox mb={2} />
