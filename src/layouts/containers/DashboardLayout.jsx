@@ -14,7 +14,7 @@ import { useMaterialUIController, setLayout } from 'context';
 import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
 import Footer from 'layouts/components/Footer';
 
-export default function DashboardLayout(/* { children } */) {
+export default function DashboardLayout() {
 
     const competitionName = 'SM Linköping 2022';
 
@@ -32,7 +32,6 @@ export default function DashboardLayout(/* { children } */) {
                 p: 3,
                 position: 'relative',
                 minHeight: '100vh',
-                //paddingBottom: '2.5rem',
                 [breakpoints.up('xl')]: {
                     marginLeft: miniSidenav ? pxToRem(120) : pxToRem(274),
                     transition: transitions.create(['margin-left', 'margin-right'], {
@@ -44,7 +43,6 @@ export default function DashboardLayout(/* { children } */) {
         >
             <MDBox sx={{ paddingBottom: '2.5rem' }}>
                 <DashboardNavbar title={competitionName} />
-                {/* {children} */}
                 <Outlet />
             </MDBox>
             <Footer />

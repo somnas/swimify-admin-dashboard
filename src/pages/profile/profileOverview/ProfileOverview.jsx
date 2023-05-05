@@ -8,17 +8,13 @@ import Divider from '@mui/material/Divider';
 import MDBox from 'components/MDBox';
 
 // Overview page components
-import DashboardLayout from 'layouts/containers/DashboardLayout';
-import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
-import Footer from 'layouts/components/Footer';
 import Header from './components/header/Header';
 import OrganizerInfo from './components/organizerInfo/OrganizerInfo';
 import ProfileInfo from './components/profileInfo/ProfileInfo';
 
 export default function ProfileOverview() {
 	return (
-		<DashboardLayout>
-			<DashboardNavbar />
+		<>
 			<MDBox mb={2} />
 			<Header>
 				<MDBox mt={4} mb={2}>
@@ -33,7 +29,6 @@ export default function ProfileOverview() {
 					</Grid>
 				</MDBox>
 			</Header>
-			<Footer />
-		</DashboardLayout>
+		</>
 	);
 }

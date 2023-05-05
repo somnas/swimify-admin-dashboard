@@ -23,8 +23,7 @@ import DeleteAccount from './components/DeleteAccount';
 
 export default function ProfileSettings() {
     return (
-        <DashboardLayout>
-            <DashboardNavbar />
+        <>
             <MDBox mt={4}>
                 <Grid container spacing={3}>
                     <Grid item xs={12} lg={3}>
@@ -62,7 +61,6 @@ export default function ProfileSettings() {
                     </Grid>
                 </Grid>
             </MDBox>
-            <Footer />
-        </DashboardLayout>
+        </>
     );
 }
