@@ -6,6 +6,7 @@ import MDTypography from 'components/MDTypography';
 import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
 
 import useMediaQuery from '@mui/material/useMediaQuery';
+import CompetitionCard from 'layouts/components/CompetitionCard';
 
 export default function CompetitionList2() {
 
@@ -23,9 +24,14 @@ export default function CompetitionList2() {
                             Competition overview. Click on a competition to see its details.
                         </MDTypography>
                     </MDBox>
-                    {dummyCompetitions.competitions.map(competition => (
-                        <DetailedCompetitionCard key={competition.id} competition={competition} />
-                    ))}
+                    {dummyCompetitions.competitions.map(competition => {
+                        return (!desktop ?
+                            <CompetitionCard key={competition.id} competition={competition} />
+                            :
+                            <DetailedCompetitionCard key={competition.id} competition={competition} />
+                        );
+                    }
+                    )}
                 </Card>
             </MDBox>
         </>
