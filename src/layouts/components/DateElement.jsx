@@ -20,14 +20,14 @@ export default function DateElement(startDate, endDate, yearDayFontSize, monthFo
         return (
             <>
                 <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startYear}</Typography>
-                <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase'>{startMonthName}</Typography>
+                <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase' sx={{mb: '-0.5px', bgcolor: ''}}>{startMonthName}</Typography>
                 <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startDay}</Typography>
-                <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>-</Typography>
+                <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>-</Typography>
                 <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{endYear}</Typography>
-                <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase'>{endMonthName}</Typography>
+                <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase' sx={{mb: '-0.5px', bgcolor: ''}}>{endMonthName}</Typography>
                 <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{endDay}</Typography>
             </>
-        )
+        );
     }
     if (startYear === endYear) {
         if (startMonthName === endMonthName) {
@@ -35,30 +35,30 @@ export default function DateElement(startDate, endDate, yearDayFontSize, monthFo
                 return (
                     <>
                         <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startYear}</Typography>
-                        <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase'>{startMonthName}</Typography>
+                        <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase' sx={{mb: '-0.5px', bgcolor: ''}}>{startMonthName}</Typography>
                         <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startDay}</Typography>
                     </>
-                )
+                );
             } else {
                 return (
                     <>
                         <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startYear}</Typography>
-                        <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase'>{startMonthName}</Typography>
+                        <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase' sx={{mb: '-0.5px', bgcolor: ''}}>{startMonthName}</Typography>
                         <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startDay} - {endDay}</Typography>
                     </>
-                )
+                );
             }
         } else {
             return (
                 <>
                     <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startYear}</Typography>
-                    <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase'>{startMonthName}</Typography>
+                    <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase' sx={{mb: '-0.5px', bgcolor: ''}}>{startMonthName}</Typography>
                     <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{startDay}</Typography>
                     <Typography lineHeight={1} fontWeight={300} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>-</Typography>
-                    <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase'>{endMonthName}</Typography>
+                    <Typography lineHeight={1} fontWeight={300} fontSize={monthFontSize ?? { xs: '0.40rem', sm: '0.55rem', md: '0.7rem' }} textTransform='uppercase' sx={{mb: '-0.5px', bgcolor: ''}}>{endMonthName}</Typography>
                     <Typography lineHeight={1} fontWeight={500} fontSize={yearDayFontSize ?? { xs: '0.5rem', sm: '0.75rem', md: '0.8rem' }}>{endDay}</Typography>
                 </>
-            )
+            );
         }
     }
 }

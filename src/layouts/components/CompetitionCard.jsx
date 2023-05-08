@@ -10,6 +10,7 @@ import {
 import compImg from 'assets/images/sumsim_logo_small.png';
 import organizer_logo from 'assets/images/logos/organizer_logo.png';
 import flag from 'assets/images/logos/SE.svg';
+import DateElement from './DateElement';
 
 export default function CompetitionCard({ competition }) {
 
@@ -64,7 +65,7 @@ export default function CompetitionCard({ competition }) {
                     sx={{ display: 'flex', flexDirection: 'column', justifyContent: 'space-between', bgcolor: '' }}>
                     <Typography noWrap sx={{ fontWeight: 700, fontSize: { xs: '0.75rem', sm: '0.9rem', md: '1rem' }, lineHeight: 1 }}>{name}</Typography>
                     <Box display='flex' alignItems='center' gap={{ xs: 0.35, sm: 0.6 }} sx={{ bgcolor: '' }}>
-                        {/* {DateElement(startDate, endDate)} */}
+                        {DateElement(startDate, endDate)}
                     </Box>
                 </Grid>
             </Grid>
