@@ -1,19 +1,18 @@
 import React from 'react';
 
-import DashboardLayout from 'layouts/containers/DashboardLayout';
 import Card from '@mui/material/Card';
 import MDBox from 'components/MDBox';
 import MDTypography from 'components/MDTypography';
 import DetailedCompetitionCard from 'layouts/components/DetailedCompetitionCard';
-import DashboardNavbar from 'layouts/components/navbars/dashboardNavbar/DashboardNavbar';
-import Footer from 'layouts/components/Footer';
+
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function CompetitionList2() {
 
+    const desktop = useMediaQuery('(min-width:1300px)');
+
     return (
         <>
-            {/* <DashboardLayout> */}
-            {/* <DashboardNavbar /> */}
             <MDBox pt={6} pb={3}>
                 <Card>
                     <MDBox p={3} lineHeight={1}>
@@ -29,8 +28,6 @@ export default function CompetitionList2() {
                     ))}
                 </Card>
             </MDBox>
-            {/* <Footer /> */}
-            {/* </DashboardLayout> */}
         </>
     );
 }

@@ -14,22 +14,22 @@ export const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const fetchUser = async () => {
-          const response = await Auth.currentAuthenticatedUser();
-          setUser(response);
-        }
+            const response = await Auth.currentAuthenticatedUser();
+            setUser(response);
+        };
         fetchUser();
-      }, []);
+    }, []);
 
     //console.log(user);
 
-    // call this function when you want to authenticate the user
+    // function to authenticate the user
     const login = async (data) => {
         Auth.currentAuthenticatedUser()
             .then(currentUser => setUser(currentUser), navigate('/dashboard'))
             .catch(() => console.log("Not signed in"));
     };
 
-    // call this function to sign out logged in user
+    // function to sign out logged in user
     const logout = () => {
         setUser(null);
         navigate('/authentication/sign-in', { replace: true });
@@ -43,7 +43,7 @@ export const AuthProvider = ({ children }) => {
         }),
         [user]
     );
-    
+
     return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
