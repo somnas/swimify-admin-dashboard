@@ -7,13 +7,19 @@ import {
     Typography,
 } from '@mui/material';
 
+import compImg from 'assets/images/sumsim_logo_small.png';
+import organizer_logo from 'assets/images/logos/organizer_logo.png';
+import flag from 'assets/images/logos/SE.svg';
+
 export default function CompetitionCard({ competition }) {
+
+    console.log(competition);
 
     const navigate = useNavigate();
 
     const { id, startDate, endDate, name, seo_text, organizer, city, pool_name } = competition;
 
-    const compImg = competition?.small_image || '/img/competition-img-small-placeholder.png';
+    //const compImg = competition?.small_image || '/img/competition-img-small-placeholder.png';
 
     const dateArr = startDate.split('-');
     const year = dateArr[0];
@@ -65,7 +71,7 @@ export default function CompetitionCard({ competition }) {
             <Grid container item xs={6} width='100%' sx={{ bgcolor: '' }}>
                 <Grid container item display='flex' xs={6} gap={{ xs: 0.5, sm: 0.5 }} my='auto' sx={{ bgcolor: '' }}>
                     <Box height={28} width={28} sx={{ boxShadow: 3, borderRadius: 2 }}>
-                        <Box component='img' height={28} width={28} src={competition?.organizer_logo ? competition?.organizer_logo : '/img/img-placeholder-square_32.png'} sx={{ borderRadius: 2 }} />
+                        <Box component='img' height={28} width={28} src={organizer_logo} sx={{ borderRadius: 2 }} />
                     </Box>
                     <Box width={{ xs: 'calc(100% - 36px)', md: 'calc(100% - 40px)' }} maxWidth={340} my='auto' sx={{ bgcolor: '' }}>
                         <Typography noWrap lineHeight={1} sx={{ fontWeight: 300, fontSize: { xs: '0.5rem', sm: '0.65rem', md: '0.75rem' } }}>{organizer}</Typography>
@@ -77,7 +83,7 @@ export default function CompetitionCard({ competition }) {
                             <Typography noWrap lineHeight={1} sx={{ fontWeight: 500, fontSize: { xs: '0.5rem', sm: '0.65rem', md: '0.8rem' } }}>{pool_name}</Typography>
                             <Box display='flex' alignItems='center' gap={0.5} sx={{ bgcolor: '' }}>
                                 <Box width={16} height={12} display='flex' alignItems='center' sx={{ boxShadow: 2, borderRadius: 1, bgcolor: '' }}>
-                                    {/* <FlagComponent countryCode={competition?.nation_code} size='s' /> */}
+                                    <Box component='img' src={flag ? flag : '/img/img-placeholder-square_48.png'} sx={{ borderRadius: 1, height: '12px', width: '16px' }} />
                                 </Box>
                                 <Typography noWrap lineHeight={1} sx={{ fontWeight: 300, fontSize: { xs: '0.5rem', sm: '0.65rem', md: '0.75rem' } }}>{city}</Typography>
                             </Box>
